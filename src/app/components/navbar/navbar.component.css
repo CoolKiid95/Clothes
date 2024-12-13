@@ -13,8 +13,10 @@ nav {
     height: 50px;
     margin-top: 15px;
     margin-right: 180px;
-    border-color: white;
-    border-radius: 30px;
+    border-color: none;
+    border-radius: 25px;
+    font-family: Roboto Condensed;
+    text-align: center
 }
 .iconosNav {
     gap:38px;
