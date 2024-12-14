@@ -1,6 +1,6 @@
 footer{
     background-color: rgba(164, 186, 183, 1);
-    width: 1440px;
+    width: 1349px;
     height: 367px;
     font-family: Roboto Condensed;
     font-size: 20px;
@@ -8,7 +8,7 @@ footer{
 .iconosFooter {
     gap: 200px;
     padding: 80px;
-    margin-right: 150px;
+    margin-right: 75px;
 }
 .iconos-redes {
     margin-left: 100px;
