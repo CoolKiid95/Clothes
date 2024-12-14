@@ -1,5 +1,5 @@
 .registro{
-    margin: 30px;
+    margin: 60px;
     font-family:Roboto Condensed;
     font-size: 13px;
     color: white;
@@ -56,9 +56,10 @@ button {
     justify-content: center;
     font-family: Pacifico;
     font-size: 64px;
+    margin-bottom: 30px;
 }
 .dudas {
     font-family: Roboto Condensed;
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
 }
