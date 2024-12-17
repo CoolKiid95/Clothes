@@ -8,5 +8,30 @@ import { Component } from '@angular/core';
   styleUrl: './nav-products.component.css'
 })
 export class NavProductsComponent {
+    mostrar: boolean = true
+    mostrar1: boolean = true
+    mostrar2: boolean = true
+    hover() {
+        console.log("hover")
+        this.mostrar = false
+    }
+    noHover() {
+        console.log("Nohover")
+        this.mostrar = true
+    }
+    hover1 () {
+        this.mostrar1 = false
+    }
+    noHover1 () {
+        this.mostrar1 = true
+    }
+
+    hover2 (){
+        this.mostrar2 = false
+    }
+
+    noHover2 () {
+        this.mostrar2 = true
+    }
 
 }

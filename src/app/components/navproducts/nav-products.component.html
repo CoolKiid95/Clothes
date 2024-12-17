@@ -1,133 +1,66 @@
-<div class="hover d-flex justify-content-center">
-    <button class="hover-btn primera">Ropa</button>
-    <button class="hover-btn tercera">Accesorios</button>
-    <div class="button-container">
-      <div class="image-container primera1">
-        <div>
-            <img src="camisa-mujer.png" alt="Imagen 1">
-            <p>Camisas</p>
+<div class="hover d-flex justify-content-center button-container">
+    <button class="boton primera" (mouseleave)="noHover()" (mouseover)="hover()">Ropa</button>
+    <button class="boton segunda"  (mouseleave)="noHover1()" (mouseover)="hover1()" >Zapatos</button>
+    <button class="boton tercera"  (mouseleave)="noHover2()" (mouseover)="hover2()">Accesorios</button>
+</div>
+    <div class="image-container d-flex justify-content-around primera1" [class.aparecer]="mostrar">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="camisa-mujer.png" alt="Imagen 1">
+            <p class="botones-text">Camisas</p>
         </div>
-        <div>
-            <img src="pantalon.png" alt="Imagen 2">
-            <p>Pantalones</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="pantalon.png" alt="Imagen 2">
+            <p class="botones-text">Pantalones</p>
         </div>
-        <div>
-            <img src="vestido.png" alt="Imagen 3">
-            <p>Vestido</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="vestido.png" alt="Imagen 3">
+            <p class="botones-text">Vestido</p>
         </div>
-        <div>
-            <img src="deportivo.png" alt="Imagen 4">
-            <p>Deportivo</p>
+        <div class="d-flex  flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="deportivo.png" alt="Imagen 4">
+            <p class="botones-text">Deportivo</p>
         </div>
-        <div>
-            <img src="invierno.png" alt="Imagen 5">
-            <p>Invierno</p>
+        <div class="d-flex  flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="invierno.png" alt="Imagen 5">
+            <p class="botones-text">Invierno</p>
         </div>
-      </div>
-      <div class="image-container tercera3">
-        <div>
-            <img src="reloj.png" alt="Imagen 1">
-            <p>Relojes</p>
+    </div>
+    <div class="image-container d-flex justify-content-around segunda2" [class.aparecer1]="mostrar1">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="formales.png" alt="Imagen 1">
+            <p class="botones-text">Formales</p>
         </div>
-        <div>
-            <img src="collar.png" alt="Imagen 2">
-            <p>Joyeria</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="Casuales.png" alt="Imagen 2">
+            <p class="botones-text">Casuales</p>
         </div>
-        <div>
-            <img src="gorra.png" alt="Imagen 3">
-            <p>Gorras</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="tenis.png" alt="Imagen 3">
+            <p class="botones-text">Deportivos</p>
         </div>
-        <div>
-            <img src="maleta.png" alt="Imagen 4">
-            <p>Maletas</p>
+    </div>
+    <div class="image-container d-flex justify-content-around tercera3" [class.aparecer]="mostrar2">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="reloj.png" alt="Imagen 5">
+            <p class="botones-text">Relojes</p>
         </div>
-        <div>
-            <img src="bebes.png" alt="Imagen 5">
-            <p>Bebes</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="collar.png" alt="Imagen 2">
+            <p class="botones-text">Joyeria</p>
         </div>
-        <div>
-            <img src="tenis.png" alt="Imagen 5">
-            <p>Zapatos</p>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="gorra.png" alt="Imagen 3">
+            <p class="botones-text">Gorras</p>
         </div>
-      </div>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="maleta.png" alt="Imagen 4">
+            <p class="botones-text">Maletas</p>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <img class="mb-3 botones-img" src="bebes.png" alt="Imagen 5">
+            <p class="botones-text">Bebes</p>
+        </div>
     </div>
 
 
-  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="hover d-flex justify-content-center">
-    <div class="button-container">
-            <button class="hover-btn primera">Ropa</button>
-      <div class="image-container primera1">
-        <div>
-            <img src="camisa-mujer.png" alt="Imagen 1">
-            <p>Camisas</p>
-        </div>
-        <div>
-            <img src="pantalon.png" alt="Imagen 2">
-            <p>Pantalones</p>
-        </div>
-        <div>
-            <img src="vestido.png" alt="Imagen 3">
-            <p>Vestido</p>
-        </div>
-        <div>
-            <img src="deportivo.png" alt="Imagen 4">
-            <p>Deportivo</p>
-        </div>
-        <div>
-            <img src="invierno.png" alt="Imagen 5">
-            <p>Invierno</p>
-        </div>
-      </div>
-    </div>
-    <div class="button-container">
-      <button class="hover-btn tercera">Accesorios</button>
-    <div class="image-container tercera3">
-        <div>
-            <img src="reloj.png" alt="Imagen 1">
-            <p>Relojes</p>
-        </div>
-        <div>
-            <img src="collar.png" alt="Imagen 2">
-            <p>Joyeria</p>
-        </div>
-        <div>
-            <img src="gorra.png" alt="Imagen 3">
-            <p>Gorras</p>
-        </div>
-        <div>
-            <img src="maleta.png" alt="Imagen 4">
-            <p>Maletas</p>
-        </div>
-        <div>
-            <img src="bebes.png" alt="Imagen 5">
-            <p>Bebes</p>
-        </div>
-        <div>
-            <img src="tenis.png" alt="Imagen 5">
-            <p>Zapatos</p>
-        </div>
-      </div>
-    </div>
-  </div>
- -->

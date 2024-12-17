@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductDisplayComponent } from './components/product-display/product-display.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -9,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
   standalone: true,
   imports: [
     RouterOutlet,
+    ProductDisplayComponent,
+    RouterOutlet,
     NavbarComponent,
     FooterComponent,
 ],
@@ -17,4 +20,5 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'clothesproject';
+
 }
