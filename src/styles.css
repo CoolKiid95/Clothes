@@ -10,6 +10,16 @@
     --base-letter-color:#A4BAB7;
     --novedades-background-color: #D9D9D9;
 }
+.pacifico {
+    font-family: 'Pacifico';
+    font-size: 20px;
+    color: white;
+}
+.Roboto-Con{
+    font-family:'Roboto Condensed';
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');

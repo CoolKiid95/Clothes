@@ -5,14 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl:string =""
+
+  apiUrl:string ="http://localhost:4000/api"
   constructor(private http: HttpClient) { }
+  
 
   GetProduct(id:string){
     return this.http.get(`${this.apiUrl}/product/${id}`)
   }
-  GetProductsbyCategories(){
-    
+  GetProductsbyCategories(categorias:Array<string>){
+        return this.http.get(`${this.apiUrl}/product/${categorias}`)
   }
 
 }

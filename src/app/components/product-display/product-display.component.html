@@ -1,32 +1,52 @@
-@if(!product){
-    <div class="d-flex justify-content-center">
-        <div class="images" style="width: 30%;">{{product.images}}</div>
-        <div class="product_info-sec " style="width: 30%;">
-            <div class="product" style="padding: 20px;">
-
-                <div>Talla</div>
-                <!-- <div>{{product.prenda}}</div> -->
-                 <div><p>PRENDA.Nombre</p></div>
-                <!-- <div>{{product.}}</div> -->
-                 <div><p>Descripcion:</p></div>
-                <div><p>Estado:</p></div>
-                <div class="buttonsections" >
-                    <button class="btn_addProduct">Agregar Producto</button><button aria-disabled="true" class="btn_trueque">Trueque</button>
+@if(product){
+    <div class="d-flex justify-content-center" style="margin-top: 4rem; flex-direction:column">
+        <div class="d-flex justify-content-center">
+            <div class="images" style="width: 30%;">
+                <div class="img-1" style="height: 27rem; border: 1px solid #000; margin-bottom: 2rem;">
+                    <img src="{{product.imagen[0]}}" alt="" id="imagen1">
                 </div>
-                
-                <div class="about_seller" style="padding-top: 20px;">
-                    <p>Del vendedor</p>
-                    <div>
-                        <img src="" alt="">
-                        <p>Nombre del vendedor</p>
-                    </div>
+    
+                <div class="imgs"style="height: 7rem; border: 1px solid #000; overflow: hidden;">
+                    <div><img src="{{product.imagen[1]}}" alt="" class="img-mini" style="width: 7rem;"></div>
+                    <div><img src="{{product.imagen[2]}}" alt="" class="img-mini" style="width: 7rem;"></div>
+                    <div><img src="{{product.imagen[3]}}" alt="" class="img-mini"></div>
+                    
                 </div>
             </div>
-            
-           
+            <div class="product_info-sec " style="width: 30%;">
+                <div class="product" style="padding: 20px;">
+    
+                    <div class="Roboto-Con">Talla</div>
+                    <!-- <div>{{product.prenda}}</div> -->
+                     <div class="Roboto-Con" style="font-size: 24px; font-weight: 200;">{{product.prenda}}</div>
+                     <div class="Roboto-Con" style="font-size: 18px; font-weight: bold; padding-bottom: 20px;"><p>{{product.precio}}</p></div>
+    
+                    <!-- <div>{{product.}}</div> -->
+                     <div class="Roboto-Con" ><p>{{product.descripcion}}</p></div>
+                     <!-- <div>{{product.descripcion}}</div> -->
+                    <div class="Roboto-Con"><p>Estado: {{product.estado}}</p>
+                    <!-- <div>{{product.estado}}</div> --></div>
+                    <div class="buttonsections Roboto-Con" >
+                        <button class="btn_addProduct">Agregar al Carrito</button>
+                        <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;">Trueque</button>
+                    </div>
+                    
+                    
+                    <div class="about_seller" style="padding-top: 20px;">
+                        <p>Del vendedor</p>
+                        <div class="d-flex">
+                            <a href=""><img src="{owner.image}}" alt="IMG" style="margin: 1rem;"></a>
+                            <a href=""><p>"owner.nombre"</p></a>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
         </div>
+        
         <hr>
-        <div class="other_pro"></div>
+        <div class="other_pro d-flex justify-content-center">Otros Productos</div>
 
     </div>
     
