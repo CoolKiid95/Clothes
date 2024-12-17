@@ -52,6 +52,10 @@ export class ProductDisplayComponent {
         console.log(this.ownerid);
         this.getowner(this.ownerid)
         console.log(this.owner);
+
+
+
+        this.getrelated(this.product.tipo)
         
         
       })
@@ -61,7 +65,7 @@ export class ProductDisplayComponent {
       this.owner = ownr
     })
   }
-  getrelated(){
+  getrelated(Categories:string){
     this.Pservice.GetProductsbyCategories(this.Categories).subscribe((products)=>{
       this.relatedproducts=products
 

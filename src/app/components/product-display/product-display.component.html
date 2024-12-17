@@ -46,7 +46,22 @@
         </div>
         
         <hr>
-        <div class="other_pro d-flex justify-content-center">Otros Productos</div>
+        <div class="other_pro d-flex justify-content-center">
+            <p>Otros Productos:</p>
+            @for (item of relatedproducts; track $index) {
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Product: $item</p>
+                    </div>
+                  </div>
+
+
+
+
+            }
+
+        </div>
 
     </div>
     
