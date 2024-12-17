@@ -1,0 +1,71 @@
+.button-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+  /* Estilo del botón */
+  .hover-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+
+    .tercera:hover {
+        background-color: rgba(226, 173, 205, 1)
+     }
+     .segunda:hover {
+       background-color: rgba(248, 210, 176, 1)
+    }
+    .primera:hover {
+       background-color: rgba(250, 248, 190, 1)
+    }
+
+
+  .image-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+
+  .button-container:hover .image-container {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  .image-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+.primera1 {
+    background-color:  rgba(250, 248, 190, 1);
+    width: 1349px;
+    height: 195px;
+}
+.segunda2{
+    background-color: rgba(248, 210, 176, 1) ;
+    width: 1349px;
+    height: 195px;
+}
+.tercera3{
+    background-color:  rgba(226, 173, 205, 1);
+    width: 1349px;
+    height: 195px;
+}
