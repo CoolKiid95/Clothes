@@ -1,9 +1,9 @@
 <div class="hover d-flex justify-content-center button-container">
-    <button class="boton primera" (mouseleave)="noHover()" (mouseover)="hover()">Ropa</button>
-    <button class="boton segunda"  (mouseleave)="noHover1()" (mouseover)="hover1()" >Zapatos</button>
-    <button class="boton tercera"  (mouseleave)="noHover2()" (mouseover)="hover2()">Accesorios</button>
+    <button class="boton primera"  (mouseover)="hover()">Ropa</button>
+    <button class="boton segunda"   (mouseover)="hover1()" >Zapatos</button>
+    <button class="boton tercera"   (mouseover)="hover2()">Accesorios</button>
 </div>
-    <div class="image-container d-flex justify-content-around primera1" [class.aparecer]="mostrar">
+    <div class="image-container d-flex justify-content-around primera1" (mouseleave)="noHover()" [class.aparecer]="mostrar">
         <div class="d-flex flex-column align-items-center justify-content-center">
             <img class="mb-3 botones-img" src="camisa-mujer.png" alt="Imagen 1">
             <p class="botones-text">Camisas</p>
@@ -25,7 +25,7 @@
             <p class="botones-text">Invierno</p>
         </div>
     </div>
-    <div class="image-container d-flex justify-content-around segunda2" [class.aparecer1]="mostrar1">
+    <div class="image-container d-flex justify-content-around segunda2" (mouseleave)="noHover1()" [class.aparecer1]="mostrar1">
         <div class="d-flex flex-column align-items-center justify-content-center">
             <img class="mb-3 botones-img" src="formales.png" alt="Imagen 1">
             <p class="botones-text">Formales</p>
@@ -39,7 +39,7 @@
             <p class="botones-text">Deportivos</p>
         </div>
     </div>
-    <div class="image-container d-flex justify-content-around tercera3" [class.aparecer]="mostrar2">
+    <div class="image-container d-flex justify-content-around tercera3" (mouseleave)="noHover2()" [class.aparecer]="mostrar2">
         <div class="d-flex flex-column align-items-center justify-content-center">
             <img class="mb-3 botones-img" src="reloj.png" alt="Imagen 5">
             <p class="botones-text">Relojes</p>

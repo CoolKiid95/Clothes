@@ -7,9 +7,7 @@
 .aparecer2{
     display: none !important;
 }
-.ocultar {
-    display: none;
-}
+
 .boton {
     padding: 10px 20px;
     font-size: 22px;
@@ -89,4 +87,7 @@ p {
 
 .botones-item:hover .botones-text {
     font-weight: bold;
+}
+.button-container {
+    gap: 10px
 }

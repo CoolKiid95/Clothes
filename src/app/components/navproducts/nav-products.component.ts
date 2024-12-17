@@ -12,11 +12,9 @@ export class NavProductsComponent {
     mostrar1: boolean = true
     mostrar2: boolean = true
     hover() {
-        console.log("hover")
         this.mostrar = false
     }
     noHover() {
-        console.log("Nohover")
         this.mostrar = true
     }
     hover1 () {
