@@ -1,71 +1,92 @@
-.button-container {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
+.aparecer {
+    display: none !important;
 }
-
-  /* Estilo del botón */
-  .hover-btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-
-    .tercera:hover {
-        background-color: rgba(226, 173, 205, 1)
-     }
-     .segunda:hover {
-       background-color: rgba(248, 210, 176, 1)
-    }
-    .primera:hover {
-       background-color: rgba(250, 248, 190, 1)
-    }
-
-
-  .image-container {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-
-
-  .button-container:hover .image-container {
-    opacity: 1;
-    visibility: visible;
-  }
-
-
-  .image-container img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-  }
-
+.aparecer1 {
+    display: none !important;
+}
+.aparecer2{
+    display: none !important;
+}
+.ocultar {
+    display: none;
+}
+.boton {
+    padding: 10px 20px;
+    font-size: 22px;
+    color: black;
+    font-family: 'Pacifico';
+    cursor: pointer;
+    margin-right: 70px;
+}
+.primera{
+    background: none;
+    border: none;
+    border-bottom: 6px solid rgba(250, 248, 190, 1);
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+.segunda {
+    background: none;
+    border: none;
+    border-bottom: 6px solid  rgba(224, 141, 121, 1) ;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+.tercera {
+    background: none;
+    border: none;
+    border-bottom: 6px solid rgba(226, 173, 205, 1);
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
 .primera1 {
+    position: relative;
+    top: 35px;
     background-color:  rgba(250, 248, 190, 1);
-    width: 1349px;
-    height: 195px;
+    display: flex;
+    padding: 42px;
+    gap: 18px;
+    opacity: 90%;
 }
 .segunda2{
-    background-color: rgba(248, 210, 176, 1) ;
-    width: 1349px;
-    height: 195px;
+    position: relative;
+    top: 35px;
+    background-color: rgba(224, 141, 121, 1);
+    display: flex;
+    padding: 42px;
+    gap: 18px;
+    opacity: 90%;
 }
-.tercera3{
-    background-color:  rgba(226, 173, 205, 1);
-    width: 1349px;
-    height: 195px;
+.tercera3 {
+    position: relative;
+    top: 35px;
+    background-color: rgba(226, 173, 205, 1);
+    display: flex;
+    padding: 42px;
+    gap: 18px;
+    opacity: 90%;
+}
+
+p {
+    font-family: Roboto Condensed;
+    font-family: 16px;
+}
+
+.botones-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.botones-img {
+    transition: transform 0.3s ease
+}
+.botones-item:hover .botones-img {
+    transform: scale(1.1);
+}
+
+.botones-item:hover .botones-text {
+    font-weight: bold;
 }
