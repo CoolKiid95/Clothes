@@ -1,13 +1,24 @@
-.aparecer {
-    display: none !important;
+.image-container {
+    display: none;
+  }
+.image-container.show {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 35px;
+    opacity: 80%;
+    width: 100vw;
+    height: 250px;
 }
-.aparecer1 {
-    display: none !important;
+.primera1:hover {
+    border-bottom: rgba(250, 248, 190, 1);
 }
-.aparecer2{
-    display: none !important;
+.segunda2:hover {
+    border-bottom: rgba(224, 141, 121, 1) ;
 }
-
+.tercera3:hover {
+    border-bottom: rgba(226, 173, 205, 1);
+}
 .boton {
     padding: 10px 20px;
     font-size: 22px;
@@ -15,79 +26,44 @@
     font-family: 'Pacifico';
     cursor: pointer;
     margin-right: 70px;
-}
-.primera{
+    text-align: center;
     background: none;
     border: none;
+}
+.primera {
     border-bottom: 6px solid rgba(250, 248, 190, 1);
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
 }
 .segunda {
-    background: none;
-    border: none;
     border-bottom: 6px solid  rgba(224, 141, 121, 1) ;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
 }
 .tercera {
-    background: none;
-    border: none;
     border-bottom: 6px solid rgba(226, 173, 205, 1);
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
 }
 .primera1 {
-    position: relative;
-    top: 35px;
     background-color:  rgba(250, 248, 190, 1);
-    display: flex;
-    padding: 42px;
-    gap: 18px;
-    opacity: 90%;
 }
 .segunda2{
-    position: relative;
-    top: 35px;
-    background-color: rgba(224, 141, 121, 1);
-    display: flex;
-    padding: 42px;
-    gap: 18px;
-    opacity: 90%;
+    background-color: rgba(224, 141, 121, 1)
 }
 .tercera3 {
-    position: relative;
-    top: 35px;
     background-color: rgba(226, 173, 205, 1);
-    display: flex;
-    padding: 42px;
-    gap: 18px;
-    opacity: 90%;
 }
-
-p {
+.text {
+    text-align: center;
     font-family: Roboto Condensed;
     font-family: 16px;
+    transition: font-weight 0.3s ease;
 }
-
-.botones-item {
-    text-align: center;
-    cursor: pointer;
+.contenedor {
     transition: transform 0.3s ease;
 }
-.botones-img {
+.img {
     transition: transform 0.3s ease
 }
-.botones-item:hover .botones-img {
-    transform: scale(1.1);
+.contenedor:hover .img {
+    transform: translateY(-10px);
 }
 
-.botones-item:hover .botones-text {
+.contenedor:hover .text{
     font-weight: bold;
-}
-.button-container {
-    gap: 10px
 }
