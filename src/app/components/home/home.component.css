@@ -1,0 +1,16 @@
+.novedades {
+    font-size: 64px;
+    font-family: 'pacifico';
+}
+.contenedor-nov {
+    margin-top: 90px;
+    margin-left: 50px;
+}
+.contenedor {
+    margin: 90px;
+    gap: 20px;
+}
+a.botones {
+    background-color: #004139;
+    gap: 20px;
+}

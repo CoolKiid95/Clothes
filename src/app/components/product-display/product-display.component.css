@@ -1,11 +1,40 @@
 .btn_addProduct{
 background-color: #004139;
 color: white;
-border-radius: 24px;
+border-radius: 1.3rem;
+height: 3rem;
+padding-right: 4rem;
+padding-left: 4rem;
 }
 .btn_trueque{
 background-color: #F2F5CD;
 color: #004139;
-border-radius: 24px;
+border-radius: 1.3rem;
 border-color: #004139;
+height: 2rem;
+}
+.pacifico {
+    
+    color: rgb(0, 0, 0);
+}
+#imagen1{
+    object-fit: contain;
+    width: 100%;
+}
+.img-1{
+    overflow:hidden;
+}
+.img-mini{
+    object-fit: contain;
+    
+    
+}
+.imgs{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+a{
+    text-decoration: none;
+    color: #004139;
 }
