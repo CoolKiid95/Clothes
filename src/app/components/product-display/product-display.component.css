@@ -10,8 +10,10 @@ padding-left: 4rem;
 background-color: #F2F5CD;
 color: #004139;
 border-radius: 1.3rem;
-border-color: #004139;
+border-color: hsl(173, 100%, 13%);
 height: 2rem;
+padding-right: 2.5rem;
+padding-left: 2.5rem;
 }
 .pacifico {
     
@@ -26,8 +28,7 @@ height: 2rem;
 }
 .img-mini{
     object-fit: contain;
-    
-    
+     
 }
 .imgs{
     display: flex;

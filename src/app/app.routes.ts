@@ -23,6 +23,8 @@ export const routes: Routes = [
     {path: 'register', component:RegisterComponent},
     {path:"producto/:id", component:ProductDisplayComponent},
     {path:"nav", component:NavbarComponent},
+    {path: "perfil/:userid", component:PerfilComponent},
     {path: "perfil", component:PerfilComponent}
+
 ];
 

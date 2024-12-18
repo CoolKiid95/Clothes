@@ -15,8 +15,7 @@ export class ProductService {
   }
   GetProductsbyCategories(categorias:string){
     console.log(categorias);
-    
-        return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
+    return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
 
   }
   

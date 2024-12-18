@@ -1,11 +1,12 @@
-<div class="d-flex" style="flex-direction: row;">
+<div class="d-flex" style="flex-direction: row;height: 40rem; margin-top: 4rem;">
     <div class="perfil" style="width: 20rem;">
-        <div><img src="" alt="Prof-Pic"></div>
-        <div>Nombre</div>
-        <div>Correo</div>
-        <div>Telefono</div>
+        <div style="width: 4rem;height: 4rem;"><img src="{{user.foto}}" alt="P-Pic" ></div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Nombre: </p>{{user.nombre}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Correo: </p> {{user.email}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Telefono: </p> {{user.telefono}}</div>
     </div>
-    <div class="product_profile">
+    <div class="d-flex" style="justify-content:flex-end;">
+      <div class="product_profile">
         <!-- <ul class="nav nav-tabs">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Mis Productos</a>
@@ -45,6 +46,8 @@
                 4</div>
           </div>
     </div>
+    </div>
+    
     <div></div>
     
 </div>
