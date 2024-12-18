@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   apiUrl:string ="http://localhost:4000/api"
+  token: any = sessionStorage.getItem('token')
+
   constructor(private http: HttpClient) { }
 
 
@@ -15,10 +17,13 @@ export class ProductService {
   }
   GetProductsbyCategories(categorias:string){
     console.log(categorias);
-    
-        return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
 
+        return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
   }
-  
+  addProduct (body:any ){
+    const headers = new HttpHeaders().set ("Authorization", `Bearer${this.token}`)
+    return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
+  }
+
 
 }
