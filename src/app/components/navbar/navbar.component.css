@@ -7,6 +7,7 @@ nav {
     font-family: 'Pacifico';
     font-size: 20px;
     color: white;
+    cursor: pointer
 }
 .buscador {
     width: 340px;
@@ -26,8 +27,12 @@ nav {
     width: 231pxs;
     height: 84px;
     margin-right: 100px;
+    cursor: pointer
 }
 .iconos{
     gap: 40px;
     margin-top: 25px;
+}
+.iconos1 {
+    cursor: pointer
 }
