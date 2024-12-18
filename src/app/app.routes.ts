@@ -7,6 +7,8 @@ import { ComoFuncionaComponent } from './components/como-funciona/como-funciona.
 import { TermsComponent } from './components/terms/terms.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/public/login/login.component';
+import { RegisterComponent } from './components/public/register/register.component';
 import { Error404Component } from './error404/error404.component';
 
 
@@ -22,6 +24,9 @@ export const routes: Routes = [
     {path:'quienessomos', component: QuienesSomosComponent},
     {path: 'comoFunciona', component: ComoFuncionaComponent},
     {path: 'termycondiciones', component: TermsComponent},
+    {path:'login', component:LoginComponent},
+    {path: 'register', component:RegisterComponent},,
     {path: 'error404', component: Error404Component},
     {path: '**', pathMatch: 'full', redirectTo: '404'}
 ];
+
