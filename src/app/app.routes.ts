@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { Error404Component } from './error404/error404.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 export const routes: Routes = [
@@ -19,14 +20,15 @@ export const routes: Routes = [
     {path: "perfil", component:PerfilComponent},
     {path:"displayproduct", component:ProductDisplayComponent},
     {path:"nav", component:NavbarComponent},
-    {path: 'contacto', component: ContactoComponent},
-    {path: '',component: HomeComponent},
-    {path:'quienessomos', component: QuienesSomosComponent},
-    {path: 'comoFunciona', component: ComoFuncionaComponent},
-    {path: 'termycondiciones', component: TermsComponent},
-    {path:'login', component:LoginComponent},
-    {path: 'register', component:RegisterComponent},,
-    {path: 'error404', component: Error404Component},
-    {path: '**', pathMatch: 'full', redirectTo: '404'}
+    {path: "contacto", component: ContactoComponent},
+    {path: "",component: HomeComponent},
+    {path: "quienessomos", component: QuienesSomosComponent},
+    {path: "comoFunciona", component: ComoFuncionaComponent},
+    {path: "termycondiciones", component: TermsComponent},
+    {path: "login", component:LoginComponent},
+    {path: "register", component:RegisterComponent},
+    {path: "carrito", component: CarritoComponent},
+    {path: "error404", component: Error404Component},
+    {path: "**", pathMatch: 'full', redirectTo: '404'}
 ];
 
