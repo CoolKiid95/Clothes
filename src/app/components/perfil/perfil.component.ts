@@ -34,6 +34,9 @@ export class PerfilComponent {
       this.user=usuario
     })
   }
+  Addprenda(){
+    
+  }
 
 
 }
