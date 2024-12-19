@@ -5,12 +5,15 @@
 .contenedor-nov {
     margin-top: 90px;
     margin-left: 50px;
+    width: 100vw;
 }
-.contenedor {
-    margin: 90px;
-    gap: 20px;
-}
+
 a.botones {
     background-color: #004139;
     gap: 20px;
+}
+.fotoHome{
+    width: 100vw;
+    margin: 0;
+    padding: 0%;
 }

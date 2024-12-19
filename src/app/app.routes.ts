@@ -15,23 +15,20 @@ import { RegisterComponent } from './components/public/register/register.compone
 
 
 export const routes: Routes = [
+    {path:"producto/:id", component:ProductDisplayComponent},
+    {path:"home", component:HomeComponent},
+    {path: "perfil", component:PerfilComponent},
     {path:"displayproduct", component:ProductDisplayComponent},
+    {path:"nav", component:NavbarComponent},
     {path: 'contacto', component: ContactoComponent},
     {path: '',component: HomeComponent},
+    {path:'quienessomos', component: QuienesSomosComponent},
     {path: 'comoFunciona', component: ComoFuncionaComponent},
+    {path: 'termycondiciones', component: TermsComponent},
+    {path:'login', component:LoginComponent},
+    {path: 'carrito' , component: CarritoComponent},
     {path: 'register', component:RegisterComponent},
-    {path:"producto/:id", component:ProductDisplayComponent},
-    {path: "perfil/:userid", component:PerfilComponent},
-    {path: "perfil", component:PerfilComponent},
-    {path:"home", component:HomeComponent},
-    {path:"nav", component:NavbarComponent},
-    {path: "",component: HomeComponent},
-    {path: "quienessomos", component: QuienesSomosComponent},
-    {path: "termycondiciones", component: TermsComponent},
-    {path: "login", component:LoginComponent},
-    {path: "productos", component: ProductosComponent},
-    {path: "carrito", component: CarritoComponent},
-    {path: "error404", component: Error404Component},
-    {path: "**", pathMatch: 'full', redirectTo: '404'}
+    {path: 'error404', component: Error404Component},
+    {path: '**', pathMatch: 'full', redirectTo: '404'}
 ];
 
