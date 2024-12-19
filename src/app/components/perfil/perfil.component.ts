@@ -17,7 +17,7 @@ export class PerfilComponent {
   user!:any
   userid!:string
   misproductos!:any
-
+  estado!:boolean
     constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
 
   }
@@ -27,7 +27,11 @@ export class PerfilComponent {
     
     this.getuser(this.userid)
     this.getprendas(this.userid)
-
+    if (this.userid) {
+      
+    } else {
+      
+    }
 
 
   }
