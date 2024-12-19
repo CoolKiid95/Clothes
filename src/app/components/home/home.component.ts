@@ -19,9 +19,9 @@ export class HomeComponent {
     productService = inject(ProductService)
 
     ngOnInit () {
-        if (sessionStorage.getItem('token') == undefined || null) {
-             this.router.navigate(['perfil'])
-        }
+        // if (sessionStorage.getItem('token') == undefined || null) {
+        //      this.router.navigate(['perfil'])
+        // }
         this.productService.GetProducts().subscribe({
              next:(resApi : any)=> {
                  console.log(resApi);
