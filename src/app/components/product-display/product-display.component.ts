@@ -1,12 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
 import { ProductService } from '../../services/product/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [],
+  imports: [ RouterLink],
   templateUrl: './product-display.component.html',
   styleUrl: './product-display.component.css'
 })
@@ -49,13 +49,15 @@ export class ProductDisplayComponent {
         console.log(this.product.owner);
         this.ownerid = this.product.owner
 
+
         console.log(this.ownerid);
+
         this.getowner(this.ownerid)
-        console.log(this.owner);
 
 
+        this.Categories = this.product.tipo
 
-        this.getrelated(this.product.tipo)
+        this.getrelated(this.Categories)
         
         
       })
@@ -65,11 +67,22 @@ export class ProductDisplayComponent {
       this.owner = ownr
     })
   }
-  getrelated(Categories:string){
-    this.Pservice.GetProductsbyCategories(this.Categories).subscribe((products)=>{
+  getrelated(categories:string){
+    this.Pservice.GetProductsbyCategories(categories).subscribe((products)=>{
+
       this.relatedproducts=products
+      console.log(this.relatedproducts);
+      
 
     })
+  }
+  ownerpage(){
+
+  }
+  reloadPage() {
+    this.ngOnInit()
+    
+    // window.location.reload();
   }
   
 }

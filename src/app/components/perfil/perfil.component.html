@@ -1,11 +1,12 @@
-<div class="d-flex" style="flex-direction: row;">
+<div class="d-flex" style="flex-direction: row;height: 40rem; margin-top: 4rem;">
     <div class="perfil" style="width: 20rem;">
-        <div><img src="" alt="Prof-Pic"></div>
-        <div>Nombre</div>
-        <div>Correo</div>
-        <div>Telefono</div>
+        <div style="width: 4rem;height: 4rem;"><img src="{{user.foto}}" alt="P-Pic" ></div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Nombre: </p>{{user.nombre}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Correo: </p> {{user.email}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Telefono: </p> {{user.telefono}}</div>
     </div>
-    <div class="product_profile">
+    <div class="d-flex" style="justify-content:flex-end;">
+      <div class="product_profile">
         <!-- <ul class="nav nav-tabs">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Mis Productos</a>
@@ -21,22 +22,36 @@
             </li>
           </ul> -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-underline navig"  role="presentation">
               <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Mis Productos</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-underline navig" role="presentation">
               <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Favoritos</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-underline navig" role="presentation">
               <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Historial de Ventas</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-underline navig" role="presentation">
               <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Historial de Compras</button>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+          <div class="tab-content " id="myTabContent">
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                1</div>
+              <div class="d-flex" style="padding: 3rem">
+                @for (item of misproductos; track $index) {
+                  <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
+                      <div style="overflow: hidden; min-height: 13rem;">
+                          <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
+                        <p class="card-text">{{item.precio}}</p>
+                      </div>
+                    </div>
+              }
+              </div>
+                  
+            </div>
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                 2</div>
             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
@@ -45,6 +60,9 @@
                 4</div>
           </div>
     </div>
-    <div></div>
-    
+    </div>
+    <div>
+    </div>
+
 </div>
+<div class="d-flex" style="justify-content: flex-end; margin-right: 30rem; margin-bottom: 5rem;"><button (click)="Addprenda()">Agregar Prenda</button></div>
