@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   apiUrl:string ="http://localhost:4000/api"
+
   constructor(private http: HttpClient) { }
 
 
@@ -15,10 +16,12 @@ export class ProductService {
   }
   GetProductsbyCategories(categorias:string){
     console.log(categorias);
-    
+
         return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
 
   }
-  
+  GetProducts(){
+    return this.http.get(`${this.apiUrl}/products`)
+    }
 
 }
