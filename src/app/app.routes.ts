@@ -14,9 +14,6 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ProductosComponent } from './components/productos/productos.component';
 
 
-export const routes: Routes = [
-
-import { PerfilComponent } from './components/perfil/perfil.component';
 
 export const routes: Routes = [
     {path:"displayproduct", component:ProductDisplayComponent},

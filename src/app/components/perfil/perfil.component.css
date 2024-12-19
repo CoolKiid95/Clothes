@@ -2,4 +2,15 @@
     background-color: #A4BAB7;
     font-size: 1.2rem;
     font-family:'Roboto Condensed';
+    border: 5px solid #004139;
+}
+.navig{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    color-scheme: #004139;
+    border-bottom: 3px solid #004139;
+    width: 24rem;
+}
+.card{
+    margin-right: 2rem;
 }

@@ -24,6 +24,8 @@ export class ProductService {
     const headers = new HttpHeaders().set ("Authorization", `Bearer${this.token}`)
     return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
   }
-
+  GetProductbyOwner(id:string){
+    return this.http.get(`${this.apiUrl}/myproducts/${id}`)
+  }
 
 }

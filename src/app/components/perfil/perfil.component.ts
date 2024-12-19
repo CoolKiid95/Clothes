@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { UsersService } from '../../services/users/users.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { producerIncrementEpoch } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
 })
 export class PerfilComponent {
   user!:any
   userid!:string
+  misproductos!:any
 
     constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
 
@@ -22,6 +26,7 @@ export class PerfilComponent {
     console.log(this.userid);
     
     this.getuser(this.userid)
+    this.getprendas(this.userid)
 
 
 
@@ -34,9 +39,17 @@ export class PerfilComponent {
       this.user=usuario
     })
   }
-  Addprenda(){
-    
+  getprendas(userid:string){
+    this.Pservice.GetProductbyOwner(userid).subscribe((products)=>{
+      console.log(products);
+      
+      this.misproductos=products
+    })
   }
+  Addprenda(){
 
+  }
+  reloadPage() {
+  }
 
 }

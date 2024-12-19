@@ -1,12 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
 import { ProductService } from '../../services/product/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [],
+  imports: [ RouterLink],
   templateUrl: './product-display.component.html',
   styleUrl: './product-display.component.css'
 })
@@ -75,6 +75,14 @@ export class ProductDisplayComponent {
       
 
     })
+  }
+  ownerpage(){
+
+  }
+  reloadPage() {
+    this.ngOnInit()
+    
+    // window.location.reload();
   }
   
 }

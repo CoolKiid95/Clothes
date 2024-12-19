@@ -35,8 +35,8 @@
                     <div class="about_seller" style="padding-top: 20px;">
                         <p>Del vendedor</p>
                         <div class="d-flex">
-                            <a href=""><img src="{{owner.image}}" alt="IMG" style="margin: 1rem;"></a>
-                            <a href=""><p>{{owner.nombre+" "+owner.apellido}}</p></a>
+                            <a><img src="{{owner.image}}" [routerLink]="['/perfil',ownerid]" alt="IMG" style="margin: 1rem;" ></a>
+                            <a ><p [routerLink]="['/perfil',ownerid]"  >{{owner.nombre+" "+owner.apellido}}</p></a>
                         </div>
                     </div>
                 </div>
@@ -50,12 +50,12 @@
             <p>Otros Productos:</p>
             <div class="container-fluid d-flex" style="justify-content: space-evenly; padding: 6rem;">
                 @for (item of relatedproducts; track $index) {
-                    <div class="card" style="width: 18rem; height: 24rem;">
-                        <div style="overflow: hidden">
-                            <img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%;">
+                    <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()" >
+                        <div style="overflow: hidden;  min-height: 13rem;">
+                            <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
                         </div>
                         <div class="card-body">
-                          <p class="card-text">{{item.prenda}}</p>
+                          <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
                           <p class="card-text">{{item.precio}}</p>
                         </div>
                       </div>
