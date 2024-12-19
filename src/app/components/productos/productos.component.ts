@@ -20,41 +20,6 @@ export class ProductosComponent {
     items!:any
     usuario!:any
     precio!:string
-    ngOnInit(){
-        this.productService.GetProducts().subscribe({
-            next:(resApi:any)=>{
-
-                this.items = resApi
-
-                for (let i = 0; i < this.items.length; i++) {
-                    const element = this.items[i];
-                    this.userService.GetUser(element.owner).subscribe({
-
-                        next:(resApi:any)=>{
-                            this.usuario=resApi
-                            element.imag=this.usuario.imagen
-                            element.nombre=this.usuario.nombre
-                            element.apellido=this.usuario.apellido
-                        },
-                        error:(error:any)=>{
-                            console.log(error);
-                        }
-                    })
-                }
-            },
-            error:(error:any)=>{
-                console.log(error);
-
-            }
-        })
-
-
-    }
-
-
-
-
-
     products!: any
     formProduct!: FormGroup
 
@@ -71,6 +36,36 @@ export class ProductosComponent {
         })
     }
 
+    ngOnInit(){
+        this.productService.GetProducts().subscribe({
+            next:(resApi:any)=>{
+                this.items = resApi
+                for (let i = 0; i < this.items.length; i++) {
+                    const element = this.items[i];
+                    this.userService.GetUser(element.owner).subscribe({
+                        next:(resApi:any)=>{
+                            this.usuario=resApi
+                            element.imag=this.usuario.imagen
+                            element.nombre=this.usuario.nombre
+                            element.apellido=this.usuario.apellido
+
+                        },
+                        error:(error:any)=>{
+                            console.log(error);
+                        }
+                    })
+                }
+
+
+            },
+            error:(error:any)=>{
+                console.log(error);
+
+            }
+        })
+
+
+    }
     addProduct () {
         if (this.formProduct.valid) {
             this.productService.addProduct(this.formProduct.value).subscribe({

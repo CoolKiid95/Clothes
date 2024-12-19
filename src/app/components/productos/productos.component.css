@@ -1,11 +1,14 @@
 .zapatos{
-    background-color: var(--footer-color);
+    background-color: var(--zapatos-color);
+    border-top-right-radius: 8px;
 }
 .ropa{
-
+    background-color: var(--ropa-color);
+    border-top-right-radius: 8px;
 }
 .accesorios{
-
+    background-color: var(--accesorios-color);
+    border-top-right-radius: 8px;
 }
 
 .user-img{
@@ -56,4 +59,7 @@ button:hover{
     margin: none;
     height: fit-content;
     width: 100%;
+}
+.product-text{
+    justify-content: start !important;
 }
