@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    ProductDisplayComponent,
+    // ProductDisplayComponent,
     RouterOutlet,
     NavbarComponent,
     FooterComponent,

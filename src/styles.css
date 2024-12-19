@@ -16,6 +16,14 @@
     --base-letter-color:#A4BAB7;
     --novedades-background-color: #D9D9D9;
 }
+<<<<<<<<< Temporary merge branch 1
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+=========
 .pacifico {
     font-family: 'Pacifico';
     font-size: 20px;
@@ -26,9 +34,7 @@
     color: rgb(0, 0, 0);
     font-size: 16px;
 }
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+>>>>>>>>> Temporary merge branch 2
