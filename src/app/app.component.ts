@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from "./components/navbar/navbar.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-],
+     NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

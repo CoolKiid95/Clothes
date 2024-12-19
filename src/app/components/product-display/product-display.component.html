@@ -9,7 +9,7 @@
                 <div class="imgs"style="height: 7rem; border: 1px solid #000; overflow: hidden;">
                     <div><img src="{{product.imagen[1]}}" alt="" class="img-mini" style="width: 7rem;"></div>
                     <div><img src="{{product.imagen[2]}}" alt="" class="img-mini" style="width: 7rem;"></div>
-                    <div><img src="{{product.imagen[3]}}" alt="" class="img-mini"></div>
+                    <div><img src="{{product.imagen[3]}}" alt="" class="img-mini" style="width: 7rem;"></div>
                     
                 </div>
             </div>
@@ -28,15 +28,15 @@
                     <!-- <div>{{product.estado}}</div> --></div>
                     <div class="buttonsections Roboto-Con" >
                         <button class="btn_addProduct">Agregar al Carrito</button>
-                        <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;">Trueque</button>
+                        <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;border: 4px solid #004139;">Trueque</button>
                     </div>
                     
                     
                     <div class="about_seller" style="padding-top: 20px;">
                         <p>Del vendedor</p>
                         <div class="d-flex">
-                            <a href=""><img src="{owner.image}}" alt="IMG" style="margin: 1rem;"></a>
-                            <a href=""><p>"owner.nombre"</p></a>
+                            <a href=""><img src="{{owner.image}}" alt="IMG" style="margin: 1rem;"></a>
+                            <a href=""><p>{{owner.nombre+" "+owner.apellido}}</p></a>
                         </div>
                     </div>
                 </div>
@@ -48,18 +48,20 @@
         <hr>
         <div class="other_pro d-flex justify-content-center">
             <p>Otros Productos:</p>
-            @for (item of relatedproducts; track $index) {
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Product: $item</p>
-                    </div>
-                  </div>
-
-
-
-
-            }
+            <div class="container-fluid d-flex" style="justify-content: space-evenly; padding: 6rem;">
+                @for (item of relatedproducts; track $index) {
+                    <div class="card" style="width: 18rem; height: 24rem;">
+                        <div style="overflow: hidden">
+                            <img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%;">
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text">{{item.prenda}}</p>
+                          <p class="card-text">{{item.precio}}</p>
+                        </div>
+                      </div>
+                }
+            </div>
+            
 
         </div>
 

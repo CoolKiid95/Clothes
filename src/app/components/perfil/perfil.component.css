@@ -1,3 +1,8 @@
+.perfil{
+    background-color: #A4BAB7;
+    font-size: 1.2rem;
+    font-family:'Roboto Condensed';
+}
 
 
 
@@ -53,8 +58,24 @@
 
 
 
-/* -----------------------estilo boton agregar products */
-/* From Uiverse.io by mrhyddenn */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by mrhyddenn ESTILO BOTON AGREGAR CARRITO */
 .icon-btn {
     width: 50px;
     height: 50px;
@@ -63,9 +84,10 @@
     border-radius: 25px;
     overflow: hidden;
     position: relative;
+    top: 500px;
     transition: width 0.2s ease-in-out;
     font-weight: 500;
-    font-family: inherit;
+    font-family: Roboto Condensed;
   }
 
   .add-btn:hover {
@@ -80,7 +102,7 @@
     height: 4px;
     width: 10px;
     top: calc(50% - 2px);
-    background: seagreen;
+    background: #004139;
   }
 
   .add-btn::after {
@@ -123,7 +145,7 @@
     height: 20px;
     width: 2px;
     top: calc(50% - 10px);
-    background: seagreen;
+    background:  #004139;
     overflow: hidden;
   }
 
@@ -150,11 +172,13 @@
     height: 4px;
     top: calc(50% - 2px);
   }
+
+/* estilo de modal */
 /* From Uiverse.io by bociKond */
 .form {
     --bg-light: #efefef;
     --bg-dark: #707070;
-    --clr: #58bc82;
+    --clr:  #004139;
     --clr-alpha: #9c9c9c60;
     display: flex;
     flex-direction: column;
@@ -224,3 +248,29 @@
   .span a {
     color: var(--clr);
   }
+.btn {
+    background-color: #004139;
+    color: white;
+    font-family: Roboto Condensed;
+}
+.btn1 {
+    background-color: #707070;
+    color: white;
+    font-family: Roboto Condensed;
+}
+.modal-body {
+    background-color: #004139;
+}
+.label {
+    color: white;
+    font-family: Roboto Condensed;
+}
+.modal-title {
+    font-family: Roboto Condensed;
+}
+input {
+    width: 440px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+}
