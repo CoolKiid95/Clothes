@@ -27,5 +27,8 @@ export class ProductService {
     return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
 
   }
+  GetProducts () {
+    return this.http.get (`${this.apiUrl}/products`)
+  }
   }
 
