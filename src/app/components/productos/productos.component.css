@@ -1,3 +1,13 @@
+.zapatos{
+    background-color: var(--footer-color);
+}
+.ropa{
+
+}
+.accesorios{
+
+}
+
 .user-img{
     height: 40px;
     width: 40px;
@@ -25,7 +35,15 @@ button{
     height: 50px;
     width: 200px;
     padding: 0;
+    border: 2px solid ;
+    border-color: var(--footer-color);
 }
+button:hover{
+    background-color: var(--main-color);
+    color: var(--footer-color);
+    border: none;
+}
+
 .card-body{
     padding: 0;
 }
@@ -36,6 +54,6 @@ button{
 .prenda{
     background-color: var(--footer-color);
     margin: none;
-    height: 220px;
+    height: fit-content;
     width: 100%;
 }
