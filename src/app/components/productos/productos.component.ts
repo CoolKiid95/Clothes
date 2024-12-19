@@ -1,5 +1,9 @@
-import { Component, inject } from '@angular/core';
+
 import { ProductService } from '../../services/product/product.service';
+import { UsersService } from '../../services/users/users.service';
+import { Component, inject } from '@angular/core';
+
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -11,13 +15,11 @@ import Swal from 'sweetalert2';
   styleUrl: './productos.component.css'
 })
 export class ProductosComponent {
-
-
-
-
-
-
-    productService = inject (ProductService)
+    productService = inject(ProductService)
+    userService = inject(UsersService)
+    items!:any
+    usuario!:any
+    precio!:string
     products!: any
     formProduct!: FormGroup
 
@@ -34,6 +36,36 @@ export class ProductosComponent {
         })
     }
 
+    ngOnInit(){
+        this.productService.GetProducts().subscribe({
+            next:(resApi:any)=>{
+                this.items = resApi
+                for (let i = 0; i < this.items.length; i++) {
+                    const element = this.items[i];
+                    this.userService.GetUser(element.owner).subscribe({
+                        next:(resApi:any)=>{
+                            this.usuario=resApi
+                            element.imag=this.usuario.imagen
+                            element.nombre=this.usuario.nombre
+                            element.apellido=this.usuario.apellido
+
+                        },
+                        error:(error:any)=>{
+                            console.log(error);
+                        }
+                    })
+                }
+
+
+            },
+            error:(error:any)=>{
+                console.log(error);
+
+            }
+        })
+
+
+    }
     addProduct () {
         if (this.formProduct.valid) {
             this.productService.addProduct(this.formProduct.value).subscribe({

@@ -1,10 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav-products',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, RouterLink],
   templateUrl: './nav-products.component.html',
   styleUrl: './nav-products.component.css'
 })
