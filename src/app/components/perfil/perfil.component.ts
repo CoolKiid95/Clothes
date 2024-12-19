@@ -18,7 +18,8 @@ import { producerIncrementEpoch } from '@angular/core/primitives/signals';
 export class PerfilComponent {
   user!:any
   userid!:string
-  productService = inject(ProductService)  misproductos!:any
+  productService = inject(ProductService)
+  misproductos!:any
 
   products!: any
   formProduct!: FormGroup
