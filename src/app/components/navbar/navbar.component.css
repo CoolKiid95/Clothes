@@ -52,3 +52,33 @@ nav {
     height: 50px;
     border-radius: 4px;
 }
+.btn-close{
+    margin-left: 100px;
+
+}
+.perfil{
+    font-family: 'Pacifico';
+    font-size: 50px;
+    color: black;
+
+
+}
+.profile{
+    display: flex;
+    align-items: start;
+}
+.options{
+
+    align-items: center;
+}
+a{
+    gap: 20px;
+    font-family: Roboto Condensed;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+
+}
+.offcanvas{
+    background-color: var(--footer-color);
+}

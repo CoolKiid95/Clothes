@@ -25,7 +25,7 @@
             <li class="nav-underline navig"  role="presentation">
               <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Mis Productos</button>
             </li>
-            
+
             @if(estado){
               <li class="nav-underline navig" role="presentation">
                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Favoritos</button>
@@ -44,7 +44,7 @@
                 @for (item of misproductos; track $index) {
                   <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
                       <div style="overflow: hidden; min-height: 13rem;">
-                          <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                          <a><img src="{{item.imagen}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
                       </div>
                       <div class="card-body">
                         <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
@@ -64,15 +64,14 @@
                 4</div>
           </div>
 
-  
-  
+
+
     </div>
     </div>
-    
+
 
 </div>
-<div class="d-flex" style="justify-content: flex-end; margin-right: 30rem; margin-bottom: 5rem;"><button (click)="Addprenda()">Agregar Prenda</button></div>
-    <div></div>
+
 
 
 
@@ -158,14 +157,10 @@
                 <label for="talla" class="label">Talla</label>
                 <input formControlName="talla" type="text" name="talla" id="talla"
               /></span>
-              <span class="input-span">
-                <label for="owner" class="label">Owner</label>
-                <input formControlName="owner" type="text" name="owner" id="owner"
-              /></span>
             </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn1" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button"  class="btn btn1" data-bs-dismiss="modal">Cerrar</button>
           <button type="button" (click)="addProduct()" class="btn">Crear producto</button>
         </div>
       </div>

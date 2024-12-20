@@ -27,7 +27,7 @@ export class PerfilComponent {
 
 
 
-    constructor(private fb : FormBuilder, private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
+    constructor(private fb : FormBuilder,  private UService:UsersService, private route: ActivatedRoute){
         this.formProduct = this.fb.group({
                     prenda: ['', [Validators.required]],
                     tipo: ['', [Validators.required]],
@@ -37,7 +37,7 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', [Validators.required]]
+
                 })}
 
   ngOnInit(){
@@ -47,9 +47,9 @@ export class PerfilComponent {
     this.getuser(this.userid)
     this.getprendas(this.userid)
     if (this.userid) {
-      
+
     } else {
-      
+
     }
 
 
@@ -62,9 +62,11 @@ export class PerfilComponent {
       this.user=usuario
     })
   }
+
   addProduct () {
 
-console.log(this.formProduct.value);
+
+    console.log(this.formProduct.value);
 
 
           if (this.formProduct.valid) {
@@ -94,9 +96,12 @@ console.log(this.formProduct.value);
                   text:"Diligiencie correctamente el formulario"
               })
           }
-      }
+}
+
+
+
       getprendas(userid:string){
-        this.Pservice.GetProductbyOwner(userid).subscribe((products)=>{
+        this.productService.GetProductbyOwner(userid).subscribe((products)=>{
           console.log(products);
 
           this.misproductos=products
