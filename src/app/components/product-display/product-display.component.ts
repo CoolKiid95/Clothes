@@ -3,23 +3,34 @@ import { UsersService } from '../../services/users/users.service';
 import { ProductService } from '../../services/product/product.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CarritoService } from '../../services/carrito/carrito.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-display',
   standalone: true,
-  imports: [ RouterLink],
+  imports: [ RouterLink,
+    CommonModule
+  ],
   templateUrl: './product-display.component.html',
   styleUrl: './product-display.component.css'
 })
 export class ProductDisplayComponent {
   // PService = Inject(ProductService)
   // UService = Inject(UsersService)
+
   product!:any
   relatedproducts!:any
   Categories!:any
   owner!:any
   id!:string
   ownerid!:string
+  productosCart: any = []
+  products = [
+    { id: 1, name: 'Producto 1', price: 100 },
+    { id: 2, name: 'Producto 2', price: 200 },
+    { id: 3, name: 'Producto 3', price: 300 }
+  ];
+
   constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute, private CarritoSrvice: CarritoService){
 
   }
@@ -87,10 +98,13 @@ export class ProductDisplayComponent {
   }
 
   Addcarrito (product: any){
-    this.CarritoSrvice.Addproductcart(product)
+    this.CarritoSrvice.Addproductcart(product);
+
 
   }
-
-
+  addToCart(product: any) {
+    this.CarritoSrvice.Addproductcart(product);
+    console.log('Producto agregado al carrito:', product);
+  }
 
 }

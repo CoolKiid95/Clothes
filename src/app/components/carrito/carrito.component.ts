@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { CarritoService } from '../../services/carrito/carrito.service';
 import { UsersService } from '../../services/users/users.service';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+
+  ],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
 })
@@ -16,19 +21,25 @@ export class CarritoComponent {
     constructor (private carritoServive:CarritoService, private UsersService:UsersService ) {}
 
     ngOnInit(){
-        // console.log(this.carritoServive.getProductsCart());
 
-        this.productosCart = this.carritoServive.getProductsCart()
+    this.productosCart = this.carritoServive.getProductsCart()
+    console.log(this.productosCart);
 
-        this.UsersService.GetUser(this.productosCart.owner).subscribe({
-            next:(resApi : any)=> {
-                console.log(resApi);
-                this.user = resApi
-            },
-            error:(error: any)=>{
-                console.log(error);
-            }
-        })
+    for (let i = 0; i < this.productosCart.length; i++) {
+    const producto = this.productosCart[i];
+
+
+    this.UsersService.GetUser(producto.owner).subscribe({
+        next: (resApi: any) => {
+        console.log(resApi);
+        producto.nombre = resApi.nombre;
+        producto.apellido = resApi.apellido;
+        this.productosCart[i] = producto;
+        },
+        error: (error: any) => {
+        console.log(error);
+        }
+    });
+}
     }
-
 }
