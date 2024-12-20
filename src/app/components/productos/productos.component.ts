@@ -5,12 +5,13 @@ import { Component, inject } from '@angular/core';
 
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
