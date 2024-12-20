@@ -1,19 +1,8 @@
-.novedades {
-    font-size: 64px;
-    font-family: 'pacifico';
-}
-.contenedor-nov {
-    margin-top: 90px;
-    margin-left: 50px;
-    width: 100vw;
-}
-
-a.botones {
-    background-color: #004139;
-    gap: 20px;
-}
 .fotoHome{
-    width: 100vw;
+    width:100%;
     margin: 0;
-    padding: 0%;
+    padding: 0;
+}
+.container-fluid{
+    background-color: var(--main-color);
 }
