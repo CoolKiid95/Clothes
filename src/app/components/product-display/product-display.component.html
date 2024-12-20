@@ -28,14 +28,14 @@
                     <!-- <div>{{product.estado}}</div> --></div>
                     <div class="buttonsections Roboto-Con" >
                         <button class="btn_addProduct button">Agregar al Carrito</button>
-                        <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;border: 4px solid #004139;">Trueque</button>
+                        <!-- <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;border: 4px solid #004139;">Trueque</button> -->
                     </div>
                     
                     
                     <div class="about_seller" style="padding-top: 20px;">
                         <p>Del vendedor</p>
                         <div class="d-flex">
-                            <a><img src="{{owner.image}}" [routerLink]="['/perfil',ownerid]" alt="IMG" style="margin: 1rem;" ></a>
+                            <a style="width: 3.3rem; height: 3.3rem; overflow: hidden;"><img src="{{owner.imagen}}" [routerLink]="['/perfil',ownerid]" alt="IMG" style="object-fit: cover; width: 100%; height: 100%; " ></a>
                             <a ><p [routerLink]="['/perfil',ownerid]"  >{{owner.nombre+" "+owner.apellido}}</p></a>
                         </div>
                     </div>

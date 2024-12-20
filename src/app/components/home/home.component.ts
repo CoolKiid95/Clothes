@@ -9,7 +9,7 @@ import { ProductosComponent } from '../productos/productos.component';
   standalone: true,
   imports: [
     NavProductsComponent,
-    ProductosComponent
+    ProductosComponent,
     ProductosComponent
 ],
   templateUrl: './home.component.html',
