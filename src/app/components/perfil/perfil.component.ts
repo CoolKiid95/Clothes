@@ -20,9 +20,11 @@ export class PerfilComponent {
   userid!:string
   productService = inject(ProductService)
   misproductos!:any
+  favoritos!:any
 
   products!: any
   formProduct!: FormGroup
+  formUser!: FormGroup
   estado!:boolean
 
 
@@ -38,34 +40,39 @@ export class PerfilComponent {
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
                     owner: ['', [Validators.required]]
-                })}
+                })
+        this.formUser = this.fb.group({
+                    nombre: ['', [Validators.required]],
+                    apellido: ['', [Validators.required]],
+                    email: ['', [Validators.required]],
+                    password: ['', [Validators.required]],
+                    telefono: ['', [Validators.required]],
+                    direccion: ['', [Validators.required]],
+                    ciudad:['',[Validators.required]],
+                    imagen:['',Validators.required]
+        })   }
 
-  ngOnInit(){
-    this.userid = this.route.snapshot.paramMap.get('userid') || '';
-    console.log(this.userid);
+      ngOnInit(){
+        this.userid = this.route.snapshot.paramMap.get('userid') || '';
+        console.log(this.userid);
 
-    this.getuser(this.userid)
-    this.getprendas(this.userid)
-    if (this.userid) {
-      
-    } else {
-      
-    }
+        this.getuser(this.userid)
+        this.getprendas(this.userid)
+        
 
 
-  }
+      }
 
-  getuser(userid:string){
-    this.UService.GetUser(userid).subscribe((usuario)=>{
-      console.log(usuario);
+      getuser(userid:string){
+        this.UService.GetUser(userid).subscribe((usuario)=>{
+          console.log(usuario);
+          this.user=usuario
+          this.favoritos=this.user.favoritos
+        })
+      }
+      addProduct () {
 
-      this.user=usuario
-    })
-  }
-  addProduct () {
-
-console.log(this.formProduct.value);
-
+          console.log(this.formProduct.value);
 
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
@@ -102,10 +109,55 @@ console.log(this.formProduct.value);
           this.misproductos=products
         })
       }
-      Addprenda(){
+      EPerfil(){
+        this.formUser.setValue({
+                    nombre:this.user.nombre,
+                    apellido:this.user.apellido,
+                    email: this.user.email,
+                    password: this.user.password,
+                    telefono: this.user.telefono,
+                    direccion: this.user.direccion,
+                    ciudad:this.user.ciudad,
+                    imagen:this.user.imagen
+        }); console.log(this.formUser.value);
+        
+      }
+      EditarPerfil(){
+        if(this.formUser.valid){
+          this.UService.UpdateUser(this.userid,this.formUser.value).subscribe({
+            next: (resApi: any) => {
+              this.formUser.reset()
+              this.ngOnInit()
+              Swal.fire ({
+                  icon:"success",
+                  title:"Cambios hechos en el usuario",
+                  text:"Exitoso"
+              })
+          },
+                error: (error: any) => {
+                    console.log(error);
+                    Swal.fire ({
+                        icon: "error",
+                        title:"Cambios no hechos",
+                        text:"Cambios no pudieron hacerse"
+                    })
+                }
+            })
+        } else {
+            Swal.fire ({
+                icon:"error",
+                title:"No se ha editado el perfil",
+                text:"Diligiencie correctamente el formulario"
+            })
+        }
 
       }
       reloadPage() {
+      }
+      validar(userid:string){
+        this.UService.Validar(userid).subscribe((response:any)=>{
+          this.estado=response
+        })
       }
   }
 
