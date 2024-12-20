@@ -37,7 +37,6 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', [Validators.required]]
                 })}
 
   ngOnInit(){
@@ -47,9 +46,9 @@ export class PerfilComponent {
     this.getuser(this.userid)
     this.getprendas(this.userid)
     if (this.userid) {
-      
+
     } else {
-      
+
     }
 
 

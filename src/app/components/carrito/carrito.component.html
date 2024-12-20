@@ -1,27 +1,28 @@
-<div class="d-flex contenedor">
+<div class=" contenedor">
+@for (producto of productosCart; track $index) {
     <div class="card d-flex">
-        <p class="m-2">Nombre del vendedor: ----</p>
+        <p class="m-2">Nombre del vendedor: {{user.name}}</p>
         <div class="d-flex">
-            <img class="producto m-2" src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/68214604_1/w=800,h=800,fit=pad" alt="">
+            <img class="producto m-2" src={{producto.imagen}} alt="">
             <div class="d-flex m-5 precio">
-                <p>Nombre del Porducto</p>
-                <div class="d-flex contador">
-                    <p>+</p>
-                    <p>0</p>
-                    <p>-</p>
-                </div>
-                <p>Total:90000</p>
+                <p>Nombre del Producto: {{producto.prenda}}</p>
+                <p>Total: {{producto.precio}}</p>
             </div>
         </div>
     </div>
+}
+@for (producto of productosCart; track $index) {
     <div class="card" style="width:350px ; height:230px">
         <div class="card-body">
           <h5 class="card-title">Resumen de la compra</h5>
-          <p class="card-text">Usted esta comprando () al vendedor ---</p>
-          <p>Total a pagar</p>
+          <p class="card-text">Usted esta comprando () {{productosCart.owner}}p>
+          <p>Nombre del Producto: {{producto.prenda}}</p>
+          <p>Total a pagar: {{producto.precio}}</p>
           <button>Continuar con la compra</button>
         </div>
     </div>
+}
+
 </div>
 
 

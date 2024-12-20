@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
 import { ProductService } from '../../services/product/product.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { CarritoService } from '../../services/carrito/carrito.service';
 
 @Component({
   selector: 'app-product-display',
@@ -19,13 +20,13 @@ export class ProductDisplayComponent {
   owner!:any
   id!:string
   ownerid!:string
-  constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
+  constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute, private CarritoSrvice: CarritoService){
 
   }
   ngOnInit(){
 
     this.id = this.route.snapshot.paramMap.get('id') || '';
-    
+
     console.log(this.id);
     // console.log(this.product)
 
@@ -34,18 +35,18 @@ export class ProductDisplayComponent {
     //   console.log("works");
     // })
     this.getproduct(this.id)
-    
-    
-    
+
+
+
 
 
   }
-  
+
   getproduct(id:string){
       this.Pservice.GetProduct(id).subscribe((producto)=>{
         this.product=producto
 
-        
+
         console.log(this.product.owner);
         this.ownerid = this.product.owner
 
@@ -58,8 +59,8 @@ export class ProductDisplayComponent {
         this.Categories = this.product.tipo
 
         this.getrelated(this.Categories)
-        
-        
+
+
       })
   }
   getowner(id:string){
@@ -72,7 +73,7 @@ export class ProductDisplayComponent {
 
       this.relatedproducts=products
       console.log(this.relatedproducts);
-      
+
 
     })
   }
@@ -81,8 +82,15 @@ export class ProductDisplayComponent {
   }
   reloadPage() {
     this.ngOnInit()
-    
+
     // window.location.reload();
   }
-  
+
+  Addcarrito (product: any){
+    this.CarritoSrvice.Addproductcart(product)
+
+  }
+
+
+
 }
