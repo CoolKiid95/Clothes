@@ -82,3 +82,56 @@ a{
 .offcanvas{
     background-color: var(--footer-color);
 }
+@media screen and (max-width: 1200px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos1{
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1180px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .button{
+        margin-right: 80px;
+    }
+}
+@media screen and (max-width: 1160px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+}
+@media screen and (max-width:  1150px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 200px;
+    }
+}
+@media screen and (max-width:  1159px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 200px;
+    }
+    .buscador {
+        display: none;
+    }
+    .iconos{
+        position: absolute;
+        right: 0;
+        margin-right: 0;
+    }
+}

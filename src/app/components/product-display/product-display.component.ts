@@ -103,7 +103,7 @@ export class ProductDisplayComponent {
 
   }
   addToCart(product: any) {
-    this.CarritoSrvice.Addproductcart(product);
+    this.CarritoSrvice.getCartCount();
     console.log('Producto agregado al carrito:', product);
   }
 
