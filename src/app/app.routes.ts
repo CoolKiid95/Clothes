@@ -17,11 +17,8 @@ import { RopaComponent } from './components/ropa/ropa.component';
 import { ZapatosComponent } from './components/zapatos/zapatos.component';
 
 export const routes: Routes = [
-    {path: '',component: HomeComponent},
-    {path:"home", component:HomeComponent},
-    {path:'login', component:LoginComponent},
-    {path: 'register', component:RegisterComponent},
     {path:"producto/:id", component:ProductDisplayComponent},
+    {path:"home", component:HomeComponent},
     {path: "perfil", component:PerfilComponent},
     {path:"displayproduct", component:ProductDisplayComponent},
     {path:"nav", component:NavbarComponent},
@@ -33,10 +30,29 @@ export const routes: Routes = [
     {path: 'comoFunciona', component: ComoFuncionaComponent},
     {path: 'termycondiciones', component: TermsComponent},
     {path: 'carrito' , component: CarritoComponent},
+    {path: 'register', component:RegisterComponent},
+    {path: 'error404', component: Error404Component},
+    {path: '**', pathMatch: 'full', redirectTo: '404'},
     {path:'products', component:ProductosComponent},
+    {path: 'register', component:RegisterComponent},
+    {path:"producto/:id", component:ProductDisplayComponent},
+    {path:"nav", component:NavbarComponent},
+    {path:"home", component:HomeComponent},
+    {path: "perfil", component:PerfilComponent},
+    {path:"displayproduct", component:ProductDisplayComponent},
+    {path:"nav", component:NavbarComponent},
+    {path: "contacto", component: ContactoComponent},
+    {path: "",component: HomeComponent},
+    {path: "quienessomos", component: QuienesSomosComponent},
+    {path: "comoFunciona", component: ComoFuncionaComponent},
+    {path: "termycondiciones", component: TermsComponent},
+    {path: "login", component:LoginComponent},
+    {path: "register", component:RegisterComponent},
     {path: "productos", component: ProductosComponent},
+    {path: "carrito", component: CarritoComponent},
     {path: "error404", component: Error404Component},
     {path: "perfil/:userid", component:PerfilComponent},
-    {path: '**', pathMatch: 'full', redirectTo: 'error404'}
+    {path: "perfil", component:PerfilComponent},
+    {path: "**", pathMatch: 'full', redirectTo: '404'}
 ];
 

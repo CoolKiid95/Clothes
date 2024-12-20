@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { UsersService } from '../../services/users/users.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { producerIncrementEpoch } from '@angular/core/primitives/signals';
 
@@ -26,6 +26,7 @@ export class PerfilComponent {
   estado!:boolean
 
 
+
     constructor(private fb : FormBuilder, private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
         this.formProduct = this.fb.group({
                     prenda: ['', [Validators.required]],
@@ -34,7 +35,7 @@ export class PerfilComponent {
                     estado: ['', [Validators.required]],
                     marca: ['', [Validators.required]],
                     imagen: ['', [Validators.required]],
-                    descricion: ['', [Validators.required]],
+                    descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
                     owner: ['', [Validators.required]]
                 })}
@@ -62,6 +63,10 @@ export class PerfilComponent {
     })
   }
   addProduct () {
+
+console.log(this.formProduct.value);
+
+
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
                   next: (resApi: any) => {

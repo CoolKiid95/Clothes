@@ -10,6 +10,7 @@ import { ProductosComponent } from '../productos/productos.component';
   imports: [
     NavProductsComponent,
     ProductosComponent
+    ProductosComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -21,7 +22,9 @@ export class HomeComponent {
     productService = inject(ProductService)
 
     ngOnInit () {
-
+        // if (sessionStorage.getItem('token') == undefined || null) {
+        //      this.router.navigate(['perfil'])
+        // }
         this.productService.GetProducts().subscribe({
              next:(resApi : any)=> {
 
@@ -29,7 +32,6 @@ export class HomeComponent {
              },
              error:(error: any)=>{
                  console.log(error);
-
              }
          })
      }
