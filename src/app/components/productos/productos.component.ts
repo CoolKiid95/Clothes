@@ -32,6 +32,7 @@ export class ProductosComponent {
 
                         next:(resApi:any)=>{
                             this.usuario=resApi
+                            console.log(resApi)
                             element.imag=this.usuario.imagen
                             element.nombre=this.usuario.nombre
                             element.apellido=this.usuario.apellido
@@ -40,7 +41,7 @@ export class ProductosComponent {
                             console.log(error);
                         }
                     })
-                }
+                } console.log(this.usuario)
             },
             error:(error:any)=>{
                 console.log(error);
