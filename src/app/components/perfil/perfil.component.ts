@@ -23,6 +23,8 @@ export class PerfilComponent {
 
   products!: any
   formProduct!: FormGroup
+  estado!:boolean
+
 
     constructor(private fb : FormBuilder, private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
         this.formProduct = this.fb.group({
@@ -35,11 +37,8 @@ export class PerfilComponent {
                     descricion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
                     owner: ['', [Validators.required]]
-                })
-  estado!:boolean
-    constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
+                })}
 
-  }
   ngOnInit(){
     this.userid = this.route.snapshot.paramMap.get('userid') || '';
     console.log(this.userid);
