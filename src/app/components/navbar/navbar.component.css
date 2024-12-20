@@ -1,8 +1,8 @@
 nav {
     background-color: rgba(0, 65, 57, 1);
     width: 100vw;
-    height: 84px;
-    margin: 0;
+    height: 86px;
+    padding: 0;
 }
 .pacifico {
     font-family: 'Pacifico';
@@ -22,7 +22,8 @@ nav {
 }
 .iconosNav {
     gap:100px;
-    margin-right: 70px;
+    margin-right: 156px;
+    margin-left: 156px;
 }
 .icoNav{
     width: 231px;
@@ -52,20 +53,16 @@ nav {
     height: 50px;
     border-radius: 4px;
 }
-.btn-close{
-    margin-left: 100px;
 
-}
 .perfil{
-    font-family: 'Pacifico';
-    font-size: 50px;
-    color: black;
-
+    margin-left: 45px;
+    margin-top: 10px;
 
 }
 .profile{
     display: flex;
     align-items: start;
+    border-bottom: solid 5px var(--main-color);
 }
 .options{
 
@@ -73,7 +70,7 @@ nav {
 }
 a{
     gap: 20px;
-    font-family: Roboto Condensed;
+    font-family: pacifico;
     font-size: 20px;
     color: black;
     text-decoration: none;
@@ -81,4 +78,5 @@ a{
 }
 .offcanvas{
     background-color: var(--footer-color);
+    border: solid 5px var(--main-color);
 }

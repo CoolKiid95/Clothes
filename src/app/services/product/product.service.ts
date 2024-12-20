@@ -34,6 +34,9 @@ export class ProductService {
     return this.http.get(`${this.apiUrl}/products`)
     }
 
+    busqueda(prenda:string){
+        return this.http.get(`${this.apiUrl}/products/${prenda}`)
+    }
 
   }
 
