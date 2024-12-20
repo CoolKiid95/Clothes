@@ -9,6 +9,7 @@ export class ProductService {
   apiUrl:string ="http://localhost:4000/api"
   token: any = sessionStorage.getItem('token')
 
+
   constructor(private http: HttpClient) { }
 
 
@@ -32,6 +33,7 @@ export class ProductService {
   GetProducts(){
     return this.http.get(`${this.apiUrl}/products`)
     }
+
 
   }
 

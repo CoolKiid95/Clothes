@@ -1,6 +1,6 @@
 .card {
     width: 750px;
-    height: 220px;
+    height: 240px;
     margin: 20px;
     font-family: Roboto Condensed;
     background-color: #F1F1F1;
@@ -11,13 +11,10 @@
     border-radius: 90px;
 }
 .precio {
-    gap: 80px;
-}
-.contador {
-    gap: 10px;
+    gap: 50px;
 }
 .contenedor {
-    gap: 90px;
+    gap: 50px;
     margin-left: 40px;
 }
 button {

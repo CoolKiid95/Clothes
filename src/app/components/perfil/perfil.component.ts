@@ -37,7 +37,6 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-
                 })}
 
   ngOnInit(){

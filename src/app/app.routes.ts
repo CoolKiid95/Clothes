@@ -15,8 +15,10 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { AccesoriosComponent } from './components/accesorios/accesorios.component';
 import { RopaComponent } from './components/ropa/ropa.component';
 import { ZapatosComponent } from './components/zapatos/zapatos.component';
+import { NovedadesComponent } from './components/novedades/novedades.component';
 
 export const routes: Routes = [
+    {path: 'novedades' , component: NovedadesComponent},
     {path:"producto/:id", component:ProductDisplayComponent},
     {path:"home", component:HomeComponent},
     {path: "perfil", component:PerfilComponent},
