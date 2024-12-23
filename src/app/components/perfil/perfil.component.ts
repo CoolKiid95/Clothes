@@ -39,7 +39,7 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', [Validators.required]]
+                    owner: ['']
                 })
         this.formUser = this.fb.group({
                     nombre: ['', [Validators.required]],
@@ -73,15 +73,15 @@ export class PerfilComponent {
           this.user=usuario
           this.favoritos=this.user.favoritos
           console.log(this.estado);
-          
+
           this.validar(this.userid)
         })
       }
       addProduct () {
 
 console.log(this.formProduct.value);
-
-
+const control = this.formProduct.get('owner');
+(control as any).customProp = this.userid;
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
                   next: (resApi: any) => {
@@ -168,7 +168,7 @@ console.log(this.formProduct.value);
       validar(userid:string){
         this.UService.Validar(userid).subscribe((response:any)=>{
           console.log(this.estado);
-          
+
           this.estado=response
         })
       }

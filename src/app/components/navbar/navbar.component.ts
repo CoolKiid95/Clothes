@@ -38,7 +38,7 @@ export class NavbarComponent {
             this.productosCart = this.carritoServive.getProductsCart()
             console.log(this.productosCart);
 
-            // this.cartCount = this.carritoServive.getCartCount()
+            this.cartCount = this.carritoServive.getCartCount()
 
             for (let i = 0; i < this.productosCart.length; i++) {
                 const producto = this.productosCart[i];

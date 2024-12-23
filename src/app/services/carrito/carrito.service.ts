@@ -15,7 +15,7 @@ export class CarritoService {
   getProductsCart () {
     return this.cart
   }
-//   getCartCount(): number {
-//     return this.cart.length;
-//   }
+  getCartCount(): number {
+    return this.cart.length;
+  }
 }

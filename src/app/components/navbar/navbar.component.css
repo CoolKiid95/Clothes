@@ -133,3 +133,10 @@ a{
         margin-right: 0;
     }
 }
+.cart-count {
+    color: white;
+    font-family: Roboto Condensed;
+    margin: 0;
+    padding: 0;
+
+}

@@ -99,8 +99,7 @@ export class ProductDisplayComponent {
 
   Addcarrito (product: any){
     this.CarritoSrvice.Addproductcart(product);
-
-
+    this.ngOnInit()
   }
 //   addToCart(product: any) {
 //     this.CarritoSrvice.getCartCount();
