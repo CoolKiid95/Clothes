@@ -39,7 +39,7 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', [Validators.required]]
+                    owner: ['']
                 })
         this.formUser = this.fb.group({
                     nombre: ['', [Validators.required]],
@@ -54,31 +54,24 @@ export class PerfilComponent {
 
       ngOnInit(){
         this.userid = this.route.snapshot.paramMap.get('userid') || '';
-        console.log(this.userid);
+            this.getuser(this.userid)
+            this.getprendas(this.userid)
+            if (this.userid) {
 
-    this.getuser(this.userid)
-    this.getprendas(this.userid)
-    if (this.userid) {
+            } else {
 
-    } else {
-
-    }
+            }
 
 
-      }
+            }
 
-      getuser(userid:string){
-        this.UService.GetUser(userid).subscribe((usuario)=>{
-          console.log(usuario);
-          this.user=usuario
-          this.favoritos=this.user.favoritos
-        })
-      }
+            getuser(userid:string){
+                this.UService.GetUser(userid).subscribe((usuario)=>{
+                this.user=usuario
+                this.favoritos=this.user.favoritos
+                })
+            }
       addProduct () {
-
-console.log(this.formProduct.value);
-
-
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
                   next: (resApi: any) => {

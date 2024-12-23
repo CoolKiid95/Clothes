@@ -24,11 +24,11 @@ export class NavbarComponent {
     cartCount: number = 0;
     busqueda = new FormControl
     products!:any
-
+    id!:any
         constructor (private carritoServive:CarritoService, private UsersService:UsersService, private router:Router ) {}
         estado!:boolean
         ngOnInit(){
-
+            this.id= sessionStorage.getItem('id')
             if (sessionStorage.getItem('token')) {
                 this.estado=true
             }else{
