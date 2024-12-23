@@ -24,12 +24,12 @@ export class ProductDisplayComponent {
   owner!:any
   id!:string
   ownerid!:string
-  productosCart: any = []
-  products = [
-    { id: 1, name: 'Producto 1', price: 100 },
-    { id: 2, name: 'Producto 2', price: 200 },
-    { id: 3, name: 'Producto 3', price: 300 }
-  ];
+//   productosCart: any = []
+//   products = [
+//     { id: 1, name: 'Producto 1', price: 100 },
+//     { id: 2, name: 'Producto 2', price: 200 },
+//     { id: 3, name: 'Producto 3', price: 300 }
+//   ];
 
   constructor(private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute, private CarritoSrvice: CarritoService){
 
@@ -102,9 +102,9 @@ export class ProductDisplayComponent {
 
 
   }
-  addToCart(product: any) {
-    this.CarritoSrvice.getCartCount();
-    console.log('Producto agregado al carrito:', product);
-  }
+//   addToCart(product: any) {
+//     this.CarritoSrvice.getCartCount();
+//     console.log('Producto agregado al carrito:', product);
+//   }
 
 }

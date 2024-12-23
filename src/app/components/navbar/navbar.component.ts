@@ -22,7 +22,7 @@ export class NavbarComponent {
     user!: any
     productosCart: any = []
     cartCount: number = 0;
-    busqueda = new FormControl
+    busqueda: FormControl = new FormControl();
     products!:any
 
         constructor (private carritoServive:CarritoService, private UsersService:UsersService, private router:Router ) {}
@@ -38,7 +38,7 @@ export class NavbarComponent {
             this.productosCart = this.carritoServive.getProductsCart()
             console.log(this.productosCart);
 
-            this.cartCount = this.carritoServive.getCartCount()
+            // this.cartCount = this.carritoServive.getCartCount()
 
             for (let i = 0; i < this.productosCart.length; i++) {
                 const producto = this.productosCart[i];

@@ -63,7 +63,7 @@ export class PerfilComponent {
     } else {
 
     }
-
+    console.log(this.userid);
 
       }
 
