@@ -27,6 +27,7 @@ export class LoginComponent {
         }
     }
      login(){
+
         if (this.formlogin.valid) {
             this.userService.login(this.formlogin.value).subscribe({
                 next:(resApi:any)=>{
@@ -40,6 +41,8 @@ export class LoginComponent {
                     this.ngOnInit()
                 },
                 error:(error:any)=>{
+                    console.log(error);
+                    
                     Swal.fire({
                         icon:"error",
                         title:"Ups!",

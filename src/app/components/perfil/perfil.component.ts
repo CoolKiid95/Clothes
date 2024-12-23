@@ -25,7 +25,7 @@ export class PerfilComponent {
   products!: any
   formProduct!: FormGroup
   formUser!: FormGroup
-  estado!:boolean
+  estado=false
 
 
 
@@ -68,6 +68,9 @@ export class PerfilComponent {
           console.log(usuario);
           this.user=usuario
           this.favoritos=this.user.favoritos
+          console.log(this.estado);
+          
+          this.validar(this.userid)
         })
       }
       addProduct () {
@@ -156,6 +159,8 @@ export class PerfilComponent {
       }
       validar(userid:string){
         this.UService.Validar(userid).subscribe((response:any)=>{
+          console.log(this.estado);
+          
           this.estado=response
         })
       }
