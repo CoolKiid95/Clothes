@@ -29,7 +29,7 @@ export class PerfilComponent {
 
 
 
-    constructor(private fb : FormBuilder, private Pservice:ProductService, private UService:UsersService, private route: ActivatedRoute){
+    constructor(private fb : FormBuilder,  private UService:UsersService, private route: ActivatedRoute){
         this.formProduct = this.fb.group({
                     prenda: ['', [Validators.required]],
                     tipo: ['', [Validators.required]],
@@ -39,7 +39,7 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', []]
+                    owner: ['']
                 })
         this.formUser = this.fb.group({
                     nombre: ['', [Validators.required]],
@@ -56,10 +56,14 @@ export class PerfilComponent {
         this.userid = this.route.snapshot.paramMap.get('userid') || '';
         console.log(this.userid);
 
-        this.getuser(this.userid)
-        this.getprendas(this.userid)
-        
+    this.getuser(this.userid)
+    this.getprendas(this.userid)
+    if (this.userid) {
 
+    } else {
+
+    }
+    console.log(this.userid);
 
       }
 
@@ -69,14 +73,15 @@ export class PerfilComponent {
           this.user=usuario
           this.favoritos=this.user.favoritos
           console.log(this.estado);
-          console.log(this.userid);
+
           this.validar(this.userid)
         })
       }
       addProduct () {
 
-          console.log(this.formProduct.value);
-
+console.log(this.formProduct.value);
+const control = this.formProduct.get('owner');
+(control as any).customProp = this.userid;
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
                   next: (resApi: any) => {
@@ -104,9 +109,12 @@ export class PerfilComponent {
                   text:"Diligiencie correctamente el formulario"
               })
           }
-      }
+}
+
+
+
       getprendas(userid:string){
-        this.Pservice.GetProductbyOwner(userid).subscribe((products)=>{
+        this.productService.GetProductbyOwner(userid).subscribe((products)=>{
           console.log(products);
 
           this.misproductos=products
@@ -123,7 +131,7 @@ export class PerfilComponent {
                     ciudad:this.user.ciudad,
                     imagen:this.user.imagen
         }); console.log(this.formUser.value);
-        
+
       }
       EditarPerfil(){
         if(this.formUser.valid){

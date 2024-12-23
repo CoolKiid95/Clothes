@@ -10,7 +10,7 @@ export class UsersService {
   token: any = sessionStorage.getItem('token')
 
   constructor(private http: HttpClient) {}
-  
+
   GetUser(id:string){
       return this.http.get(`${this.apiUrl}/user/${id}`)
   }

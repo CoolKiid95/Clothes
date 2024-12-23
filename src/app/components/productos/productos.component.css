@@ -22,7 +22,7 @@
 p{
     font-family: Roboto Condensed;
     font-size: 14px;
-    line-height: 10px;
+    line-height: 15px;
 }
 .precio{
     font-size: 20px;
@@ -62,4 +62,28 @@ button:hover{
 }
 .product-text{
     justify-content: start !important;
+}
+@media screen and (max-width:  1172px){
+    .card-body {
+        width: 260px;
+        height: 460px;
+    }
+}
+@media screen and (max-width:  1095px){
+    .card-body {
+        width: 260px;
+        height: 460px;
+    }
+    .product-text{
+        display: none;
+    }
+}
+@media screen and (max-width:  1054px){
+    .card-body {
+        width: 220px;
+        height: 420px;
+    }
+    .product-text{
+        display: none;
+    }
 }
