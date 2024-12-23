@@ -25,7 +25,7 @@ export class PerfilComponent {
   products!: any
   formProduct!: FormGroup
   formUser!: FormGroup
-  estado=false
+  estado:boolean=false
 
 
 
@@ -39,7 +39,7 @@ export class PerfilComponent {
                     imagen: ['', [Validators.required]],
                     descripcion: ['', [Validators.required]],
                     talla: ['', [Validators.required]],
-                    owner: ['', [Validators.required]]
+                    owner: ['', []]
                 })
         this.formUser = this.fb.group({
                     nombre: ['', [Validators.required]],
@@ -69,7 +69,7 @@ export class PerfilComponent {
           this.user=usuario
           this.favoritos=this.user.favoritos
           console.log(this.estado);
-          
+          console.log(this.userid);
           this.validar(this.userid)
         })
       }
@@ -160,6 +160,9 @@ export class PerfilComponent {
       validar(userid:string){
         this.UService.Validar(userid).subscribe((response:any)=>{
           console.log(this.estado);
+          console.log(response);
+          console.log(userid);
+          
           
           this.estado=response
         })
