@@ -30,7 +30,7 @@
             <a type="button"  routerLink="/register" href="">Registrate</a>
         }
         @if (estado) {
-            <a type="button"  routerLink="/perfil">Perfil</a>
+            <a type="button"  routerLink="/perfil/{{id}}">Perfil</a>
             <a type="button" (click)="logout()"  href="">Logout</a>
         }
 

@@ -54,29 +54,20 @@ export class PerfilComponent {
 
       ngOnInit(){
         this.userid = this.route.snapshot.paramMap.get('userid') || '';
-        console.log(this.userid);
+            this.getuser(this.userid)
+            this.getprendas(this.userid)
+            
 
-    this.getuser(this.userid)
-    this.getprendas(this.userid)
-    if (this.userid) {
 
-    } else {
+            }
 
-    }
-    console.log(this.userid);
-
-      }
-
-      getuser(userid:string){
-        this.UService.GetUser(userid).subscribe((usuario)=>{
-          console.log(usuario);
-          this.user=usuario
-          this.favoritos=this.user.favoritos
-          console.log(this.estado);
-
-          this.validar(this.userid)
-        })
-      }
+            getuser(userid:string){
+                this.UService.GetUser(userid).subscribe((usuario)=>{
+                this.user=usuario
+                this.favoritos=this.user.favoritos
+                this.validar(this.userid)
+                })
+            }
       addProduct () {
 
 console.log(this.formProduct.value);

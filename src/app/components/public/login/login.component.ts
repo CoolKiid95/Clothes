@@ -31,14 +31,18 @@ export class LoginComponent {
         if (this.formlogin.valid) {
             this.userService.login(this.formlogin.value).subscribe({
                 next:(resApi:any)=>{
-                    let token = resApi
+                    let token = resApi.token
                     sessionStorage.setItem('token', token)
                     Swal.fire({
                         icon:"success",
                         title:"Gracias por volver!",
                         text:"Compra, vende y repite"
                     })
-                    this.ngOnInit()
+                    let id = resApi.id
+                    sessionStorage.setItem('id', id)
+                    this.router.navigate([`/perfil/${id}`])
+                    // this.ngOnInit()
+
                 },
                 error:(error:any)=>{
                     console.log(error);
