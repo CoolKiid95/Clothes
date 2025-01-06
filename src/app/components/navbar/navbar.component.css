@@ -32,11 +32,11 @@ nav {
     cursor: pointer
 }
 .iconos{
-    gap: 40px;
     margin-top: 25px;
 }
-.iconos1 {
-    cursor: pointer
+.iconos11 {
+    cursor: pointer;
+    margin-right: 40px;
 }
 
 .btn {
@@ -80,14 +80,38 @@ a{
     background-color: var(--footer-color);
     border: solid 5px var(--main-color);
 }
-@media screen and (max-width: 1200px){
+.cart-count {
+    color: white;
+    font-family: Roboto Condensed;
+    font-size: 13px;
+}
+@media screen and (max-width: 1297px){
     .icoNav {
         width: 200px;
         height: 68px;
     }
-    .iconos1{
-        margin-right: 20px;
+    .iconos{
+        margin-right: 120px;
     }
+}
+@media screen and (max-width: 1330px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+}
+@media screen and (max-width: 1320px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+
 }
 @media screen and (max-width: 1180px){
     .icoNav {
@@ -107,7 +131,7 @@ a{
         margin-right: 120px;
     }
 }
-@media screen and (max-width:  1150px){
+@media screen and (max-width:  1132px){
     .icoNav {
         width: 200px;
         height: 68px;
@@ -133,10 +157,4 @@ a{
         margin-right: 0;
     }
 }
-.cart-count {
-    color: white;
-    font-family: Roboto Condensed;
-    margin: 0;
-    padding: 0;
 
-}
