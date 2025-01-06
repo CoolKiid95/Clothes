@@ -52,11 +52,12 @@
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
               <div class="d-flex" style="padding: 3rem">
                 @for (item of misproductos; track $index) {
-                  <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
+                  <div class="card" style="width: 18rem; height: 24rem;" >
                       <div style="overflow: hidden; min-height: 13rem;">
-                          <a><img src="{{item.imagen}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                          @if(estado){<div (click)="eliminarproducto(item._id)"><button class="d-flex" style="justify-self: flex-end; color: azure; background-color: brown; width: 1.2rem; height: 1.2rem; justify-content: center; align-items: center;">X</button></div>}
+                          <a [routerLink]="['/producto',item._id]" (click)="reloadPage()"><img src="{{item.imagen}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
                       </div>
-                      <div class="card-body">
+                      <div class="card-body" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
                         <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
                         <p class="card-text">{{item.precio}}</p>
                       </div>

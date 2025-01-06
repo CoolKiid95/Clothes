@@ -34,9 +34,14 @@ export class ProductService {
     return this.http.get(`${this.apiUrl}/products`)
     }
 
-    busqueda(prenda:string){
+  busqueda(prenda:string){
         return this.http.get(`${this.apiUrl}/products/${prenda}`)
     }
+    
+  DeleteProduct(productid:string){
+    const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
+    return this.http.delete(`${this.apiUrl}/deleteproduct/${productid}`,{headers})
+  }
 
   }
 

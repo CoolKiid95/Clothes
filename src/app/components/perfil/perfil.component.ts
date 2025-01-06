@@ -29,7 +29,7 @@ export class PerfilComponent {
 
 
 
-    constructor(private fb : FormBuilder,  private UService:UsersService, private route: ActivatedRoute){
+    constructor(private fb : FormBuilder,  private UService:UsersService,private PService:ProductService, private route: ActivatedRoute){
         this.formProduct = this.fb.group({
                     prenda: ['', [Validators.required]],
                     tipo: ['', [Validators.required]],
@@ -52,120 +52,143 @@ export class PerfilComponent {
                     imagen:['',Validators.required]
         })   }
 
-      ngOnInit(){
-        this.userid = this.route.snapshot.paramMap.get('userid') || '';
-            this.getuser(this.userid)
-            this.getprendas(this.userid)
-            
-
-
-            }
-
-            getuser(userid:string){
-                this.UService.GetUser(userid).subscribe((usuario)=>{
-                this.user=usuario
-                this.favoritos=this.user.favoritos
-                this.validar(this.userid)
-                })
-            }
-      addProduct () {
-
-console.log(this.formProduct.value);
-const control = this.formProduct.get('owner');
-(control as any).customProp = this.userid;
-          if (this.formProduct.valid) {
-              this.productService.addProduct(this.formProduct.value).subscribe({
-                  next: (resApi: any) => {
-                      this.formProduct.reset()
-                      this.ngOnInit()
-                      Swal.fire ({
-                          icon:"success",
-                          title:"Nuevo producto creado",
-                          text:"Nuevo producto agregado"
-                      })
-                  },
-                  error: (error: any) => {
-                      console.log(error);
-                      Swal.fire ({
-                          icon: "error",
-                          title:"Producto no creado",
-                          text:"No se ha agregado el producto"
-                      })
-                  }
-              })
-          } else {
-              Swal.fire ({
-                  icon:"error",
-                  title:"No se ha agregado el producto",
-                  text:"Diligiencie correctamente el formulario"
-              })
+    ngOnInit(){
+      this.userid = this.route.snapshot.paramMap.get('userid') || '';
+          this.getuser(this.userid)
+          this.getprendas(this.userid)
           }
-}
 
-
-
-      getprendas(userid:string){
-        this.productService.GetProductbyOwner(userid).subscribe((products)=>{
-          console.log(products);
-
-          this.misproductos=products
+    getuser(userid:string){
+        this.UService.GetUser(userid).subscribe((usuario)=>{
+        this.user=usuario
+        this.favoritos=this.user.favoritos
+        this.validar(userid)
         })
-      }
-      EPerfil(){
-        this.formUser.setValue({
-                    nombre:this.user.nombre,
-                    apellido:this.user.apellido,
-                    email: this.user.email,
-                    password: this.user.password,
-                    telefono: this.user.telefono,
-                    direccion: this.user.direccion,
-                    ciudad:this.user.ciudad,
-                    imagen:this.user.imagen
-        }); console.log(this.formUser.value);
-
-      }
-      EditarPerfil(){
-        if(this.formUser.valid){
-          this.UService.UpdateUser(this.userid,this.formUser.value).subscribe({
-            next: (resApi: any) => {
-              this.formUser.reset()
-              this.ngOnInit()
-              Swal.fire ({
-                  icon:"success",
-                  title:"Cambios hechos en el usuario",
-                  text:"Exitoso"
-              })
-          },
+    }
+    addProduct () {
+        console.log(this.formProduct.value);
+        const control = this.formProduct.get('owner');
+        (control as any).customProp = this.userid;
+        if (this.formProduct.valid) {
+            this.productService.addProduct(this.formProduct.value).subscribe({
+                next: (resApi: any) => {
+                    this.formProduct.reset()
+                    this.ngOnInit()
+                    Swal.fire ({
+                        icon:"success",
+                        title:"Nuevo producto creado",
+                        text:"Nuevo producto agregado"
+                    })
+                },
                 error: (error: any) => {
                     console.log(error);
                     Swal.fire ({
                         icon: "error",
-                        title:"Cambios no hechos",
-                        text:"Cambios no pudieron hacerse"
+                        title:"Producto no creado",
+                        text:"No se ha agregado el producto"
                     })
                 }
             })
         } else {
             Swal.fire ({
                 icon:"error",
-                title:"No se ha editado el perfil",
+                title:"No se ha agregado el producto",
                 text:"Diligiencie correctamente el formulario"
             })
         }
+    }
 
-      }
-      reloadPage() {
-      }
-      validar(userid:string){
-        this.UService.Validar(userid).subscribe((response:any)=>{
-          console.log(this.estado);
-          console.log(response);
-          console.log(userid);
+
+
+    getprendas(userid:string){
+      this.productService.GetProductbyOwner(userid).subscribe((products)=>{
+        console.log(products);
+
+        this.misproductos=products
+      })
+    }
+    EPerfil(){
+      this.formUser.setValue({
+                  nombre:this.user.nombre,
+                  apellido:this.user.apellido,
+                  email: this.user.email,
+                  password: this.user.password,
+                  telefono: this.user.telefono,
+                  direccion: this.user.direccion,
+                  ciudad:this.user.ciudad,
+                  imagen:this.user.imagen
+      }); console.log(this.formUser.value);
+
+    }
+    EditarPerfil(){
+      if(this.formUser.valid){
+        console.log(this.formUser.value);
+        
+        this.UService.UpdateUser(this.userid,this.formUser.value).subscribe({
           
-          
-          this.estado=response
-        })
+          next: (resApi: any) => {
+            this.ngOnInit() 
+            Swal.fire({
+              
+              icon:"success",
+              title:"Cambios hechos en el usuario",
+              text:"Exitoso"
+          })
+        }
+        ,
+        error: (error: any) => {
+                  console.log(error);
+                  Swal.fire ({
+                      icon: "error",
+                      title:"Cambios no hechos",
+                      text:"Cambios no pudieron hacerse"
+                  })
+              }
+          })
+      } else {
+          Swal.fire ({
+              icon:"error",
+              title:"No se ha editado el perfil",
+              text:"Diligiencie correctamente el formulario"
+          })
       }
+
+    }
+    reloadPage() {
+    }
+    validar(userid:string){
+      this.UService.Validar(userid).subscribe((response:any)=>{
+        console.log(this.estado);
+        console.log(response);
+        console.log(userid);
+        this.estado=response
+      })
+    }
+    eliminarproducto(itemid:string){
+      Swal.fire({
+        title: "Seguro?",
+        text: "Esta es una accion permanente",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "SI! Borrar!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.PService.DeleteProduct(itemid).subscribe(()=>{
+            console.log(`producto ${itemid} fue eliminado`)
+            this.ngOnInit()
+          })
+          Swal.fire({
+            title: "Borrado!",
+            text: "El producto fue eliminado",
+            icon: "success"
+          });
+        }
+      });
+      
+      
+    }
   }
 
 

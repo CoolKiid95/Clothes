@@ -16,14 +16,19 @@ export class UsersService {
   }
   Validar(id:string){
     
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`)
+    // const headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`)
+    // console.log(this.token);
+    const token = sessionStorage.getItem('token')
+    console.log(token);
+    
+    
 
-    return this.http.post(`${this.apiUrl}/validar/${id}`,{headers})
+    return this.http.post(`${this.apiUrl}/validar/${id}`,{token})
 
   }
   UpdateUser(id:string,body:any){
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
-    return this.http.post(`${this.apiUrl}/updateuser/${id}`,body,{headers})
+    return this.http.put(`${this.apiUrl}/updateuser/${id}`,body, {headers})
 
   }
 }
