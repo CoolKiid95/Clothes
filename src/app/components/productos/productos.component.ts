@@ -4,14 +4,14 @@ import { UsersService } from '../../services/users/users.service';
 import { Component, inject } from '@angular/core';
 
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
@@ -23,6 +23,7 @@ export class ProductosComponent {
     precio!:string
     products!: any
     formProduct!: FormGroup
+    busqueda = new FormControl
 
     constructor (private fb : FormBuilder){
         this.formProduct = this.fb.group({
@@ -95,5 +96,31 @@ export class ProductosComponent {
                 text:"Diligiencie correctamente el formulario"
             })
         }
+    }
+    buscar(){
+        this.productService.busqueda(this.busqueda.value).subscribe({
+            next:(resApi:any)=>{
+                this.items=resApi
+                for (let i = 0; i < this.items.length; i++) {
+                    const element = this.items[i];
+                    this.userService.GetUser(element.owner).subscribe({
+                        next:(resApi:any)=>{
+                            this.usuario=resApi
+                            element.imag=this.usuario.imagen
+                            element.nombre=this.usuario.nombre
+                            element.apellido=this.usuario.apellido
+
+                        },
+                        error:(error:any)=>{
+                            console.log(error);
+                        }
+                    })
+                }
+            },
+            error(error:any) {
+                console.log(error);
+
+            },
+        })
     }
 }

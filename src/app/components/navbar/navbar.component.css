@@ -10,16 +10,6 @@ nav {
     color: white;
     cursor: pointer
 }
-.buscador {
-    width: 340px;
-    height: 50px;
-    margin-top: 15px;
-    margin-right: 180px;
-    border-color: none;
-    border-radius: 25px;
-    font-family: Roboto Condensed;
-    text-align: center
-}
 .iconosNav {
     gap:100px;
     margin-right: 156px;
@@ -34,6 +24,7 @@ nav {
 .iconos{
     gap: 40px;
     margin-top: 25px;
+    margin-left: 550px;
 }
 .iconos1 {
     cursor: pointer
@@ -79,4 +70,21 @@ a{
 .offcanvas{
     background-color: var(--footer-color);
     border: solid 5px var(--main-color);
+}
+@keyframes bounce{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(8px)
+        }
+    75%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    }
+.bouncy:hover {
+    animation: bounce .5s ease;
 }
