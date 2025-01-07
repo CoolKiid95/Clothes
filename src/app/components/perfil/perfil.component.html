@@ -1,4 +1,4 @@
-<div class="d-flex" style="flex-direction: row;height: 40rem; margin-top: 4rem;">
+<div class="d-flex"style="flex-direction: row;height: 40rem; margin-top: 4rem; margin-bottom: 4rem;">
     <div class="perfil" style="width: 20rem;">
         <div style="width: 6rem;height: 6rem;overflow: hidden; justify-self: center; margin-bottom: 3rem; margin: 3rem;"><img src="{{user.imagen}}" alt="P-Pic" style="object-fit: cover; width: 100%; height: 100%;" ></div>
         <div class="d-flex"><p style="margin-right: 1.5rem;"> Nombre: </p>{{user.nombre}}</div>
@@ -50,7 +50,7 @@
           </ul>
           <div class="tab-content " id="myTabContent">
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-              <div class="d-flex" style="padding: 3rem">
+              <div class="d-flex flex-wrap" style="padding: 3rem">
                 @for (item of misproductos; track $index) {
                   <div class="card" style="width: 18rem; height: 24rem;" >
                       <div style="overflow: hidden; min-height: 13rem;">
