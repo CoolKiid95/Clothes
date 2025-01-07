@@ -22,7 +22,7 @@ export class NavbarComponent {
     user!: any
     productosCart: any = []
     cartCount: number = 0;
-    busqueda = new FormControl
+    busqueda: FormControl = new FormControl();
     products!:any
     id!:any
         constructor (private carritoServive:CarritoService, private UsersService:UsersService, private router:Router ) {}

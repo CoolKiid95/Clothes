@@ -63,9 +63,13 @@
 .contenedor:hover .img {
     transform: translateY(-10px);
 }
-
 .contenedor:hover .text{
     font-weight: bold;
+}
+@media screen and (max-width:  1159px){
+    .boton {
+        display: none;
+    }
 }
 @keyframes bounce{
     0%{

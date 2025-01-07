@@ -22,12 +22,12 @@ nav {
     cursor: pointer
 }
 .iconos{
-    gap: 40px;
     margin-top: 25px;
     margin-left: 550px;
 }
-.iconos1 {
-    cursor: pointer
+.iconos11 {
+    cursor: pointer;
+    margin-right: 40px;
 }
 
 .btn {
@@ -71,6 +71,84 @@ a{
     background-color: var(--footer-color);
     border: solid 5px var(--main-color);
 }
+.cart-count {
+    color: white;
+    font-family: Roboto Condensed;
+    font-size: 13px;
+}
+@media screen and (max-width: 1297px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+}
+@media screen and (max-width: 1330px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+}
+@media screen and (max-width: 1320px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+
+}
+@media screen and (max-width: 1180px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .button{
+        margin-right: 80px;
+    }
+}
+@media screen and (max-width: 1160px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 120px;
+    }
+}
+@media screen and (max-width:  1132px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 200px;
+    }
+}
+@media screen and (max-width:  1159px){
+    .icoNav {
+        width: 200px;
+        height: 68px;
+    }
+    .iconos{
+        margin-right: 200px;
+    }
+    .buscador {
+        display: none;
+    }
+    .iconos{
+        position: absolute;
+        right: 0;
+        margin-right: 0;
+    }
+}
+
 @keyframes bounce{
     0%{
         transform: translate(0);

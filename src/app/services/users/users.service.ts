@@ -15,8 +15,10 @@ export class UsersService {
       return this.http.get(`${this.apiUrl}/user/${id}`)
   }
   Validar(id:string){
-    const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
-    return this.http.get(`${this.apiUrl}/validar/${id}`,{headers})
+    
+    const headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`)
+
+    return this.http.post(`${this.apiUrl}/validar/${id}`,{headers})
 
   }
   UpdateUser(id:string,body:any){

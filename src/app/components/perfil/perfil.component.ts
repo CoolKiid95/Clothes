@@ -25,7 +25,7 @@ export class PerfilComponent {
   products!: any
   formProduct!: FormGroup
   formUser!: FormGroup
-  estado!:boolean
+  estado:boolean=false
 
 
 
@@ -56,11 +56,7 @@ export class PerfilComponent {
         this.userid = this.route.snapshot.paramMap.get('userid') || '';
             this.getuser(this.userid)
             this.getprendas(this.userid)
-            if (this.userid) {
-
-            } else {
-
-            }
+            
 
 
             }
@@ -69,9 +65,14 @@ export class PerfilComponent {
                 this.UService.GetUser(userid).subscribe((usuario)=>{
                 this.user=usuario
                 this.favoritos=this.user.favoritos
+                this.validar(this.userid)
                 })
             }
       addProduct () {
+
+console.log(this.formProduct.value);
+const control = this.formProduct.get('owner');
+(control as any).customProp = this.userid;
           if (this.formProduct.valid) {
               this.productService.addProduct(this.formProduct.value).subscribe({
                   next: (resApi: any) => {
@@ -157,6 +158,11 @@ export class PerfilComponent {
       }
       validar(userid:string){
         this.UService.Validar(userid).subscribe((response:any)=>{
+          console.log(this.estado);
+          console.log(response);
+          console.log(userid);
+          
+          
           this.estado=response
         })
       }
