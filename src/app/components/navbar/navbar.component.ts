@@ -36,7 +36,6 @@ export class NavbarComponent {
             }
 
             this.productosCart = this.carritoServive.getProductsCart()
-            console.log(this.productosCart);
 
             this.cartCount = this.carritoServive.getCartCount()
 
@@ -65,16 +64,6 @@ export class NavbarComponent {
             this.router.navigate(['home'])
             this.ngOnInit()
         }
-        buscar(){
-            this.productService.busqueda(this.busqueda.value).subscribe({
-                next:(resApi:any)=>{
-                    this.products=resApi
-                },
-                error(error:any) {
-                    console.log(error);
 
-                },
-            })
-        }
 
 }

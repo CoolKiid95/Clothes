@@ -1,42 +1,29 @@
 nav {
     background-color: rgba(0, 65, 57, 1);
-    width: 100vw;
+
     height: 86px;
     padding: 0;
 }
-.pacifico {
-    font-family: 'Pacifico';
-    font-size: 20px;
-    color: white;
-    cursor: pointer
-}
-.buscador {
-    width: 340px;
-    height: 50px;
-    margin-top: 15px;
-    margin-right: 180px;
-    border-color: none;
-    border-radius: 25px;
-    font-family: Roboto Condensed;
-    text-align: center
-}
+
 .iconosNav {
     gap:100px;
     margin-right: 156px;
     margin-left: 156px;
 }
+.iconos{
+    margin-right: 200px;
+}
 .icoNav{
     width: 231px;
     height: 84px;
     margin-right: 100px;
+    margin-left: 156px;
     cursor: pointer
 }
-.iconos{
-    gap: 40px;
-    margin-top: 25px;
-}
+
 .iconos1 {
-    cursor: pointer
+    cursor: pointer;
+    margin-right: 40px;
 }
 
 .btn {
@@ -80,63 +67,42 @@ a{
     background-color: var(--footer-color);
     border: solid 5px var(--main-color);
 }
-@media screen and (max-width: 1200px){
-    .icoNav {
-        width: 200px;
-        height: 68px;
-    }
-    .iconos1{
-        margin-right: 20px;
-    }
-}
-@media screen and (max-width: 1180px){
-    .icoNav {
-        width: 200px;
-        height: 68px;
-    }
-    .button{
-        margin-right: 80px;
-    }
-}
-@media screen and (max-width: 1160px){
-    .icoNav {
-        width: 200px;
-        height: 68px;
-    }
-    .iconos{
-        margin-right: 120px;
-    }
-}
-@media screen and (max-width:  1150px){
-    .icoNav {
-        width: 200px;
-        height: 68px;
-    }
-    .iconos{
-        margin-right: 200px;
-    }
-}
-@media screen and (max-width:  1159px){
-    .icoNav {
-        width: 200px;
-        height: 68px;
-    }
-    .iconos{
-        margin-right: 200px;
-    }
-    .buscador {
-        display: none;
-    }
-    .iconos{
-        position: absolute;
-        right: 0;
-        margin-right: 0;
-    }
-}
 .cart-count {
     color: white;
     font-family: Roboto Condensed;
-    margin: 0;
-    padding: 0;
+    font-size: 13px;
+    margin-left: 0;
+    margin-right: 40px;
+}
 
+@media screen and (max-width: 874px){
+    .icoNav {
+        width: 100px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 744px){
+    .iconos{
+        margin-top: 5px;
+        margin-left: 150px;
+    }
+
+}
+
+@keyframes bounce{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(8px)
+        }
+    75%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    }
+.bouncy:hover {
+    animation: bounce .5s ease;
 }
