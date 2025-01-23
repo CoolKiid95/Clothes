@@ -8,7 +8,7 @@
         @for (item of items; track $index) {
             <div class=" contenedor">
                 <div class=" mt-5">
-                    <div class="card h-100 " style="max-width: 18rem; min-width: 16rem;">
+                    <div class="card h-100 gap-2" style="max-width: 18rem; min-width: 16rem;">
                         <div class="card-body">
                             <div [class.zapatos]="item.tipo=='zapatos'" [class.ropa]="item.tipo=='ropa'" [class.accesorios]="item.tipo=='accesorios'"  class="d-flex justify-content-start align-items-center ">
                                 <img type="button" class="user-img" src="{{item.imag}}" alt="">

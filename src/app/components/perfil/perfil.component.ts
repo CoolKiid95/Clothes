@@ -26,7 +26,7 @@ export class PerfilComponent {
   formProduct!: FormGroup
   formUser!: FormGroup
   estado:boolean=false
-
+  token: any = ""
 
 
     constructor(private fb : FormBuilder,  private UService:UsersService,private PService:ProductService, private route: ActivatedRoute){
@@ -53,7 +53,8 @@ export class PerfilComponent {
         })   }
 
     ngOnInit(){
-      this.userid = this.route.snapshot.paramMap.get('userid') || '';
+        this.token = sessionStorage.getItem('token')
+        this.userid = this.route.snapshot.paramMap.get('userid') || '';
           this.getuser(this.userid)
           this.getprendas(this.userid)
           }
@@ -123,13 +124,13 @@ export class PerfilComponent {
     EditarPerfil(){
       if(this.formUser.valid){
         console.log(this.formUser.value);
-        
+
         this.UService.UpdateUser(this.userid,this.formUser.value).subscribe({
-          
+
           next: (resApi: any) => {
-            this.ngOnInit() 
+            this.ngOnInit()
             Swal.fire({
-              
+
               icon:"success",
               title:"Cambios hechos en el usuario",
               text:"Exitoso"
@@ -186,8 +187,8 @@ export class PerfilComponent {
           });
         }
       });
-      
-      
+
+
     }
   }
 

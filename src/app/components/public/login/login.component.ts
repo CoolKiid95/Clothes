@@ -22,31 +22,29 @@ export class LoginComponent {
      }
 
      ngOnInit(){
-        if (sessionStorage.getItem('token')) {
-            this.router.navigate(['/home'])
-        }
-    }
+
+            }
      login(){
 
         if (this.formlogin.valid) {
             this.userService.login(this.formlogin.value).subscribe({
                 next:(resApi:any)=>{
                     let token = resApi.token
+                    let id = resApi.id
                     sessionStorage.setItem('token', token)
+                    sessionStorage.setItem('id', id)
                     Swal.fire({
                         icon:"success",
                         title:"Gracias por volver!",
                         text:"Compra, vende y repite"
                     })
-                    let id = resApi.id
-                    sessionStorage.setItem('id', id)
-                    this.router.navigate([`/perfil/${id}`])
-                    // this.ngOnInit()
+                    this.router.navigate([`/home`])
+
 
                 },
                 error:(error:any)=>{
                     console.log(error);
-                    
+
                     Swal.fire({
                         icon:"error",
                         title:"Ups!",

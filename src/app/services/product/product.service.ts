@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   apiUrl:string ="http://localhost:4000/api"
-  token: any = sessionStorage.getItem('token')
+
+  token: any = ""
 
 
   constructor(private http: HttpClient) { }
@@ -17,11 +18,12 @@ export class ProductService {
     return this.http.get(`${this.apiUrl}/product/${id}`)
   }
   GetProductsbyCategories(categorias:string){
-    console.log(categorias);
+
 
         return this.http.get(`${this.apiUrl}/productbyCategory/${categorias}`)
   }
   addProduct (body:any ){
+    this.token = sessionStorage.getItem('token')
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
     return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
 
@@ -38,7 +40,7 @@ export class ProductService {
   busqueda(prenda:string){
         return this.http.get(`${this.apiUrl}/products/${prenda}`)
     }
-    
+
   DeleteProduct(productid:string){
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
     return this.http.delete(`${this.apiUrl}/deleteproduct/${productid}`,{headers})

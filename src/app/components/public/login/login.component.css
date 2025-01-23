@@ -1,6 +1,8 @@
 .background-img{
     position:relative;
     width: 100%;
+    height:880px ;
+    object-fit: cover;
 }
 .cont{
     position: relative;
@@ -51,4 +53,42 @@ input{
 a{
     text-decoration: underline;
     color: var(--background-color);
+}
+@media screen and (max-width: 1200px){
+    .form-box{
+        width: 600px;
+        height: 500px;
+    }
+    .lefty{
+        display: none;
+    }
+    .inputs{
+        margin-top: 150px;
+    }
+    .options{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 1026px){
+    .form-box{
+        width: 500px;
+        height: 592px;
+    }
+    .lefty{
+        display: none;
+    }
+
+}
+@media screen and (max-width: 920px){
+    .form-box{
+        width: 400px;
+        height: 592px;
+        position: absolute;
+        top: 25%;
+        left: 10%;
+    }
+    .lefty{
+        display: none;
+    }
+
 }

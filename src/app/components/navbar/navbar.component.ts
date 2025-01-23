@@ -61,6 +61,7 @@ export class NavbarComponent {
         }
         logout(){
             sessionStorage.removeItem('token')
+            sessionStorage.removeItem('id')
             this.router.navigate(['home'])
             this.ngOnInit()
         }
