@@ -36,7 +36,6 @@ export class NavbarComponent {
             }
 
             this.productosCart = this.carritoServive.getProductsCart()
-            console.log(this.productosCart);
 
             this.cartCount = this.carritoServive.getCartCount()
 
@@ -46,7 +45,6 @@ export class NavbarComponent {
 
                 this.UsersService.GetUser(producto.owner).subscribe({
                     next: (resApi: any) => {
-                    console.log(resApi);
                     producto.nombre = resApi.nombre;
                     producto.apellido = resApi.apellido;
                     this.productosCart[i] = producto;
@@ -57,6 +55,12 @@ export class NavbarComponent {
                 });
             }
         }
+
+        // eliminarDelCarrito(productId: string) {
+        //     this.carritoServive.eliminarProducto(productId);
+        //     this.productosCart = this.carritoServive.getProductsCart(); 
+        //     this.cartCount = this.carritoServive.getCartCount(); 
+        // }
         ngDoCheck(){
             this.ngOnInit()
         }

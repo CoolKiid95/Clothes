@@ -1,13 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { url } from '../../../assets/imagenes/utils/localUrl'; 
+import { prodUrl } from '../../../assets/imagenes/utils/localUrl'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  apiUrl:string ="http://localhost:4000/api"
+  // apiUrl = prodUrl
+  apiUrl = 'http://localhost:4000/api'
   token: any = sessionStorage.getItem('token')
+
+  
 
 
   constructor(private http: HttpClient) { }

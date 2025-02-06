@@ -63,6 +63,10 @@ button:hover{
 .product-text{
     justify-content: start !important;
 }
+.paginacion {
+    height: 40px;
+    width: 100px;
+}
 @media screen and (max-width:  1172px){
     .card-body {
         width: 260px;

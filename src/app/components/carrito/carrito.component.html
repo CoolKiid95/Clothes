@@ -1,14 +1,17 @@
 <div class=" contenedor">
 @for(producto of productosCart; track $index) {
     <div class="card d-flex">
-        <p *ngFor="let producto of productosCart" class="m-2">Nombre del vendedor: {{ producto.nombre }} {{producto.apellido}} </p>
+        <p class="m-2">Nombre del vendedor: {{ producto.nombre }} {{producto.apellido}} </p>
         <div class="d-flex">
             <img class="producto m-2" src={{producto.imagen}} alt="">
             <div class="d-flex m-5 precio">
                 <p>Nombre del Producto: {{producto.prenda}}</p>
                 <p>Descripcion: {{producto.descripcion}}</p>
                 <p>Total: {{producto.precio}}</p>
-                <button>Pagar ahora</button>
+                <div>
+                    <button>Pagar ahora</button>
+                    <button type="button" (click)="eliminarDelCarrito(producto._id)" >Elimitar</button>
+                </div>
             </div>
         </div>
     </div>
