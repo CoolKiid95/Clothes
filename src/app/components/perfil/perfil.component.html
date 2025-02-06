@@ -50,7 +50,7 @@
           </ul>
           <div class="tab-content " id="myTabContent">
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-              <div class="d-flex" style="padding: 3rem">
+              <div class="d-flex card1" style="padding: 3rem">
                 @for (item of misproductos; track $index) {
                   <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
                       <div style="overflow: hidden; min-height: 13rem;">

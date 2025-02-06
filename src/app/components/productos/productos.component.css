@@ -82,12 +82,42 @@ button:hover{
         display: none;
     }
 }
-@media screen and (max-width:  1054px){
+@media screen and (max-width:  390px){
     .card-body {
-        width: 220px;
-        height: 420px;
+        width: 180px;
+        height: 156px;
+        gap: 0px !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
     }
-    .product-text{
-        display: none;
+    .row {
+        margin: 0;
+        padding: 0;
+    }
+    .card{
+        gap: 0px !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
+        width: 180px;
+        height: 156px;
+    }
+    [class*="col-"] {
+        padding: 0 !important;
+    }
+    .contenedor{
+        gap: 0px !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
+    }
+    .contenedor-padre {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 0px !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
+    }  
+    @media (max-width: 768px) {
+        .contenedor-padre {
+        grid-template-columns: repeat(2, 1fr);
+        }
     }
 }

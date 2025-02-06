@@ -156,5 +156,41 @@ a{
         right: 0;
         margin-right: 0;
     }
+
+    @media screen and (max-width:  390px){
+        .iconos{
+            margin-top: 5px;
+        }
+        .iconos11 {
+            cursor: pointer;
+            margin-right: 0px;
+        }
+        .buscador {
+            display: none;
+        }
+        .icoNav {
+            margin: 0;
+            width: 120px;
+            height: 50px;
+        }
+        .icosNav {
+            display: flex;
+            justify-content:center;
+            margin-right: 0;
+        }
+        .iconos{
+            position: absolute;
+            right: 0;
+            margin-right: 0;
+        }
+        nav {
+            width: 100vw;
+            height: 70px;
+        }
+        .iconos1{
+            width: 22px;
+            height: 22px
+        }
+    }
 }
 

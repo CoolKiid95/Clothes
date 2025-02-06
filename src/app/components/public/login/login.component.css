@@ -52,3 +52,22 @@ a{
     text-decoration: underline;
     color: var(--background-color);
 }
+@media (max-width: 390px) {
+    .logo-slogan2 {
+    display: none;
+    }
+    .form-box{
+        position: absolute;
+        top: 8%;
+        left: 11%;
+        width: 300px;
+        height: 300px;
+    }
+    .button-login{
+        background-color: var(--footer-color);
+        width: 150px;
+        height: 45px;
+        margin-top: 10px;
+        font: 400 24px "Roboto Condensed", serif;
+    }
+}

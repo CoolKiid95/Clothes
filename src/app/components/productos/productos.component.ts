@@ -26,7 +26,7 @@ export class ProductosComponent {
 
 
     page: number = 1;  
-    itemsPerPage: number = 6;  
+    itemsPerPage: number = 4;  
     totalItems: number = 0;  
     loadedItems: number = 0;  
 
