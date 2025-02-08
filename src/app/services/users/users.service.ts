@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { prodctUrl } from '../../util/LocalUrl';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class UsersService {
 
   apiUrl:string ="http://localhost:4000/api"
+
   token: any = sessionStorage.getItem('token')
 
   constructor(private http: HttpClient) {}
@@ -27,7 +29,8 @@ export class UsersService {
 
   }
   UpdateUser(id:string,body:any){
-    const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
+    const tokenn = sessionStorage.getItem('token')
+    const headers = new HttpHeaders().set ("Authorization", `Bearer ${tokenn}`)
     return this.http.put(`${this.apiUrl}/updateuser/${id}`,body, {headers})
 
   }

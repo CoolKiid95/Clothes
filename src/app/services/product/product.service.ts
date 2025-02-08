@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { prodctUrl } from '../../util/LocalUrl';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,9 @@ export class ProductService {
   }
   addProduct (body:any ){
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
+    console.log(this.token);
+    console.log(headers);
+    
     return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
 
   }

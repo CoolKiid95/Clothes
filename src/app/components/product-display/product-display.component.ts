@@ -24,6 +24,7 @@ export class ProductDisplayComponent {
   owner!:any
   id!:string
   ownerid!:string
+  usuario!:any
 //   productosCart: any = []
 //   products = [
 //     { id: 1, name: 'Producto 1', price: 100 },
@@ -83,6 +84,21 @@ export class ProductDisplayComponent {
     this.Pservice.GetProductsbyCategories(categories).subscribe((products)=>{
 
       this.relatedproducts=products
+      for (let i = 0; i < this.relatedproducts.length; i++) {
+        const element = this.relatedproducts[i];
+        this.UService.GetUser(element.owner).subscribe({
+            next:(resApi:any)=>{
+                this.usuario=resApi
+                element.imag=this.usuario.imagen
+                element.nombre=this.usuario.nombre
+                element.apellido=this.usuario.apellido
+
+            },
+            error:(error:any)=>{
+                console.log(error);
+            }
+        })
+    }
       console.log(this.relatedproducts);
 
 

@@ -16,6 +16,33 @@
     margin-right: 2rem;
 }
 
+@media (max-width: 774px){
+ 
+  .container1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .perfil{
+    justify-content: center;
+    width: 100%;
+  }
+  .product_profile{
+    width: 100%;
+    .card{
+      display: flex;
+      justify-self: center;
+    }
+  }
+}
+@media (min-width: 775px){
+  .perfil{
+    width: 20rem;
+  }
+  
+}
+
+
 
 
 
