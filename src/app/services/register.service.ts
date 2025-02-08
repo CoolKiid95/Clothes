@@ -7,7 +7,9 @@ import { prodUrl } from '../utils/Url';
   providedIn: 'root'
 })
 export class RegisterService {
-    apiUrl: String = "http://localhost:4000/api"
+    // apiUrl = prodUrl
+    apiUrl = 'http://localhost:4000/api'
+
     token:any = sessionStorage.getItem('token')
   constructor(private http : HttpClient) { }
 

@@ -48,3 +48,32 @@ p {
 .bouncy:hover {
     animation: bounce .5s ease;
 }
+@media screen and (max-width:  390px){
+    .logo{
+        display: none;
+    }
+    .iconosFooter{
+        margin-left: 20px;
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .iconos-redes{
+        gap: 8px;
+        padding: 0px;
+        margin-right: 0px;
+    }
+    .contenedor{
+        gap: 8px;
+        padding: 0px;
+        margin-right: 0px;
+        display: flex;
+        justify-content: right;
+        width: 80px;
+
+    }
+        
+    }
+

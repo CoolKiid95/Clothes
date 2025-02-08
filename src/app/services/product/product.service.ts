@@ -7,9 +7,11 @@ import { prodUrl } from '../../utils/Url';
 })
 export class ProductService {
 
-  apiUrl:string ="http://localhost:4000/api"
+  // apiUrl = prodUrl
+  apiUrl = 'http://localhost:4000/api'
+  token: any = sessionStorage.getItem('token')
 
-  token: any = ""
+  
 
 
   constructor(private http: HttpClient) { }

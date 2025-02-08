@@ -122,4 +122,5 @@ export class ProductDisplayComponent {
 //     console.log('Producto agregado al carrito:', product);
 //   }
 
+
 }

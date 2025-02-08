@@ -31,7 +31,7 @@ export class CarritoComponent {
 
     this.UsersService.GetUser(producto.owner).subscribe({
         next: (resApi: any) => {
-        console.log(resApi);
+        
         producto.nombre = resApi.nombre;
         producto.apellido = resApi.apellido;
         this.productosCart[i] = producto;
@@ -42,4 +42,12 @@ export class CarritoComponent {
     });
 }
     }
+    eliminarDelCarrito(productId: string) {
+    this.carritoServive.eliminarProducto(productId);
+    this.productosCart = [...this.carritoServive.getProductsCart()]; 
+    console.log(this.productosCart);
+    
+      // this.cartCount = this.carritoServive.getCartCount(); 
+    }
+    
 }
