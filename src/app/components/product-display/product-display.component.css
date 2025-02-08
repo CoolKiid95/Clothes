@@ -84,3 +84,54 @@ a{
     width: 100%;
   }
   
+  @media (min-width: 775px){
+    .btn_addProduct{
+
+    }
+    .product_info-sec{
+      width: 30%;
+    }
+    
+    .images{
+      width: 30%;
+    }
+    
+  }
+  
+.zapatos{
+    background-color: var(--zapatos-color);
+    border-top-right-radius: 8px;
+}
+.ropa{
+    background-color: var(--ropa-color);
+    border-top-right-radius: 8px;
+}
+.accesorios{
+    background-color: var(--accesorios-color);
+    border-top-right-radius: 8px;
+}
+   @media (max-width: 774px){
+    .btn_addProduct{
+
+    }
+    .product_info-sec{
+      width: 70%;
+    }
+    .product{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .images{
+      width: 70%;
+    }
+    .productmain{
+      align-items: center;
+      justify-self: center;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }

@@ -26,6 +26,9 @@ export class ProductService {
   addProduct (body:any ){
     this.token = sessionStorage.getItem('token')
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
+    console.log(this.token);
+    console.log(headers);
+    
     return this.http.post(`${this.apiUrl}/addproduct`, body, {headers})
 
   }

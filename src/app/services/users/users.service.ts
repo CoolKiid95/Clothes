@@ -8,7 +8,8 @@ import { prodUrl } from '../../utils/Url';
 export class UsersService {
 
   apiUrl:string ="http://localhost:4000/api"
-  token: any = ""
+
+  token: any = sessionStorage.getItem('token')
 
   constructor(private http: HttpClient) {}
 
@@ -20,8 +21,8 @@ export class UsersService {
     return this.http.post(`${this.apiUrl}/validar/${id}`,{token})
   }
   UpdateUser(id:string,body:any){
-    this.token = sessionStorage.getItem('token')
-    const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
+    const tokenn = sessionStorage.getItem('token')
+    const headers = new HttpHeaders().set ("Authorization", `Bearer ${tokenn}`)
     return this.http.put(`${this.apiUrl}/updateuser/${id}`,body, {headers})
   }
 }
