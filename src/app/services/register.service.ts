@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { localUrl } from '../utils/Url';
+import { prodUrl } from '../utils/Url';
 
 @Injectable({
   providedIn: 'root'

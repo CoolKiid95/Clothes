@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { localUrl } from '../../utils/Url';
+import { prodUrl } from '../../utils/Url';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,17 +16,12 @@ export class UsersService {
       return this.http.get(`${this.apiUrl}/user/${id}`)
   }
   Validar(id:string){
-
-
     const token = sessionStorage.getItem('token')
-
     return this.http.post(`${this.apiUrl}/validar/${id}`,{token})
-
   }
   UpdateUser(id:string,body:any){
     this.token = sessionStorage.getItem('token')
     const headers = new HttpHeaders().set ("Authorization", `Bearer ${this.token}`)
     return this.http.put(`${this.apiUrl}/updateuser/${id}`,body, {headers})
-
   }
 }
