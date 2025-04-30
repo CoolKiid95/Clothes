@@ -78,7 +78,7 @@ export class ProductosComponent {
     }
     get paginatedData() {
         const startIndex = (this.page - 1) * this.itemsPerPage;
-        return this.items.slice(startIndex, startIndex + this.itemsPerPage);
+        return this.items ? this.items.slice(startIndex, startIndex + this.itemsPerPage) : [];
     }
     get totalPages() {
         return Math.ceil(this.totalItems / this.itemsPerPage);

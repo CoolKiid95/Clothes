@@ -44,7 +44,7 @@ export class CarritoComponent {
     }
     eliminarDelCarrito(productId: string) {
     this.carritoServive.eliminarProducto(productId);
-    this.productosCart = [...this.carritoServive.getProductsCart()]; 
+    this.productosCart = [this.carritoServive.getProductsCart()]; 
     console.log(this.productosCart);
     
       // this.cartCount = this.carritoServive.getCartCount(); 
